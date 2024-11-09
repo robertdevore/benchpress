@@ -18,8 +18,33 @@ if ( ! defined( 'ABSPATH' ) ) {
 define( 'BENCHPRESS_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'BENCHPRESS_VERSION', '1.0.0' );
 
+register_activation_hook( __FILE__, 'benchpress_create_snapshots_table' );
+
+/**
+ * Summary of benchpress_create_snapshots_table
+ * 
+ * @since  1.0.0
+ * @return void
+ */
+function benchpress_create_snapshots_table() {
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'benchpress_snapshots';
+    $charset_collate = $wpdb->get_charset_collate();
+
+    $sql = "CREATE TABLE $table_name (
+        id mediumint(9) NOT NULL AUTO_INCREMENT,
+        snapshot_data longtext NOT NULL,
+        created_at datetime DEFAULT CURRENT_TIMESTAMP NOT NULL,
+        PRIMARY KEY  (id)
+    ) $charset_collate;";
+
+    require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+    dbDelta( $sql );
+}
+
 // Include necessary files.
 require_once BENCHPRESS_PLUGIN_DIR . 'classes/BenchPress_Table.php';
+require_once BENCHPRESS_PLUGIN_DIR . 'classes/BenchPress_Snapshots_Table.php';
 require_once BENCHPRESS_PLUGIN_DIR . 'includes/helper-functions.php';
 
 /**
@@ -41,6 +66,15 @@ function benchpress_admin_menu() {
 
     add_submenu_page(
         'benchpress',
+        esc_html__( 'Snapshots', 'benchpress' ),
+        esc_html__( 'Snapshots', 'benchpress' ),
+        'manage_options',
+        'benchpress-snapshots',
+        'benchpress_render_snapshots_page'
+    );
+
+    add_submenu_page(
+        'benchpress',
         esc_html__( 'Settings', 'benchpress' ),
         esc_html__( 'Settings', 'benchpress' ),
         'manage_options',
@@ -50,9 +84,44 @@ function benchpress_admin_menu() {
 }
 add_action( 'admin_menu', 'benchpress_admin_menu' );
 
+function benchpress_render_snapshots_page() {
+    echo '<div class="wrap"><h1>' . esc_html__( 'BenchPress Snapshots', 'benchpress' );
+    
+    // Clear Snapshots and Download Snapshots buttons
+    echo ' <button id="benchpress-clear-snapshots-btn" class="button" style="margin-left: 10px;"><span class="dashicons dashicons-trash"></span> ' . esc_html__( 'Clear Snapshots', 'benchpress' ) . '</button>';
+    echo ' <button id="benchpress-download-snapshots-btn" class="button" style="margin-left: 10px;"><span class="dashicons dashicons-download"></span> ' . esc_html__( 'Download Snapshots', 'benchpress' ) . '</button>';
+    
+    echo '</h1><hr />';
+
+    echo '<p><a href="https://robertdevore.com/benchpress-documentation/" target="_blank">' . esc_html__( 'Documentation', 'acme' ) . '</a> &middot; <a href="https://robertdevore.com/contact/" target="_blank">' . esc_html__( 'Support', 'acme' ) . '</a> &middot; <a href="https://robertdevore.com/wordpress-and-woocommerce-plugins/" target="_blank">' . esc_html__( 'More Plugins', 'acme' ) . '</a></p>';
+
+    $table = new BenchPress_Snapshots_Table();
+    $table->prepare_items();
+    $table->display();
+
+    // Modal HTML for viewing snapshot data
+    echo '
+        <div id="snapshotModal" class="snapshot-modal" style="display:none;">
+            <div class="snapshot-modal-content">
+                <span class="snapshot-modal-close" style="cursor:pointer;">&times;</span>
+                <h2>' . esc_html__( 'Snapshot Data', 'benchpress' ) . '</h2>
+                <div id="snapshotModalData"></div>
+            </div>
+        </div>';
+
+    // CSS for modal styling
+    echo '
+        <style>
+            .snapshot-modal { display: none; position: fixed; z-index: 1000; padding-top: 60px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4); }
+            .snapshot-modal-content { background-color: #fff; margin: auto; padding: 20px; border: 1px solid #888; width: 80%; max-width: 600px; }
+            .snapshot-modal-close { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
+            .snapshot-modal-close:hover, .snapshot-modal-close:focus { color: #000; text-decoration: none; cursor: pointer; }
+        </style>';
+}
+
 /**
- * Render the BenchPress plugin's main page.
- * 
+ * Render the BenchPress plugin's main page with a refresh button.
+ *
  * @since  1.0.0
  * @return void
  */
@@ -61,16 +130,23 @@ function benchpress_render_page() {
         return;
     }
 
-    $memory_usage = round( memory_get_peak_usage() / 1024, 2 );
+    echo '<div class="wrap"><h1>' . esc_html__( 'BenchPress', 'benchpress' );
 
-    echo '<div class="wrap"><h1>' . esc_html__( 'BenchPress', 'benchpress' ) . '</h1><hr />';
-    echo '<p><strong>' . esc_html__( 'Peak Memory Usage:', 'benchpress' ) . '</strong> ' . esc_html( $memory_usage . ' KB' ) . '</p>';
+    // Add Snapshot Button.
+    echo ' <button id="benchpress-snapshot-btn" class="button"><span class="dashicons dashicons-camera"></span> ' . esc_html__( 'Save Snapshot', 'benchpress' ) . '</button>';
+    // Add Refresh Button.
+    echo ' <button id="benchpress-refresh-btn" class="button"><span class="dashicons dashicons-update"></span> ' . esc_html__( 'Refresh Tests', 'benchpress' ) . '</button>';
 
+    echo '</h1><hr />';
+
+    echo '<p><a href="https://robertdevore.com/benchpress-documentation/" target="_blank">' . esc_html__( 'Documentation', 'acme' ) . '</a> &middot; <a href="https://robertdevore.com/contact/" target="_blank">' . esc_html__( 'Support', 'acme' ) . '</a> &middot; <a href="https://robertdevore.com/wordpress-and-woocommerce-plugins/" target="_blank">' . esc_html__( 'More Plugins', 'acme' ) . '</a></p>';
+
+    echo '<div id="benchpress-results">';
+    // Initial display of benchmark results
     $table = new BenchPress_Table();
     $table->prepare_items();
     $table->display();
-
-    echo '</div>';
+    echo '</div></div>';
 }
 
 /**
@@ -239,3 +315,139 @@ function benchpress_enqueue_assets() {
     wp_enqueue_script( 'select2-js', 'https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js', [ 'jquery' ] );
 }
 add_action( 'admin_enqueue_scripts', 'benchpress_enqueue_assets' );
+
+// Enqueue JavaScript for AJAX handling
+add_action( 'admin_enqueue_scripts', function() {
+    wp_enqueue_script( 'benchpress-ajax', plugin_dir_url( __FILE__ ) . 'assets/js/benchpress-ajax.js', ['jquery'], BENCHPRESS_VERSION, true );
+
+    wp_localize_script( 'benchpress-ajax', 'benchpress_ajax', [
+        'ajax_url'  => admin_url( 'admin-ajax.php' ),
+        'nonce'     => wp_create_nonce( 'benchpress_nonce' ),
+        'site_name' => sanitize_title( get_bloginfo( 'name' ) ),
+        'datetime'  => date( 'Y-m-d_H-i-s' ),
+    ] );
+} );
+
+// AJAX: Refresh the benchmark results
+add_action( 'wp_ajax_benchpress_refresh', 'benchpress_ajax_refresh' );
+function benchpress_ajax_refresh() {
+    check_ajax_referer( 'benchpress_nonce' );
+
+    // Run benchmarks and return HTML table
+    ob_start();
+    $table = new BenchPress_Table();
+    $table->prepare_items();
+    $table->display();
+    $output = ob_get_clean();
+
+    wp_send_json_success( [ 'html' => $output ] );
+}
+
+// AJAX: Snapshot benchmark results
+function benchpress_ajax_snapshot() {
+    check_ajax_referer( 'benchpress_nonce' );
+
+    // Run benchmarks and save to database
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'benchpress_snapshots';
+
+    // Run the benchmarks
+    $benchmarks = benchpress_run_all_benchmarks();
+    $snapshot_data = json_encode( $benchmarks );
+
+    // Insert snapshot into database
+    $wpdb->insert(
+        $table_name,
+        [
+            'snapshot_data' => $snapshot_data,
+            'created_at'    => current_time( 'mysql' ),
+        ]
+    );
+
+    wp_send_json_success( [ 'message' => __( 'Snapshot saved!', 'benchpress' ) ] );
+}
+add_action( 'wp_ajax_benchpress_snapshot', 'benchpress_ajax_snapshot' );
+
+// AJAX: Delete snapshot
+function benchpress_delete_snapshot() {
+    check_ajax_referer( 'benchpress_nonce' );
+
+    if ( isset( $_POST['snapshot_id'] ) ) {
+        global $wpdb;
+        $table_name = $wpdb->prefix . 'benchpress_snapshots';
+        $snapshot_id = intval( $_POST['snapshot_id'] );
+
+        // Delete snapshot by ID
+        $deleted = $wpdb->delete( $table_name, [ 'id' => $snapshot_id ], [ '%d' ] );
+
+        if ( $deleted ) {
+            wp_send_json_success( [ 'message' => __( 'Snapshot deleted successfully.', 'benchpress' ) ] );
+        } else {
+            wp_send_json_error( [ 'message' => __( 'Failed to delete snapshot.', 'benchpress' ) ] );
+        }
+    } else {
+        wp_send_json_error( [ 'message' => __( 'Invalid snapshot ID.', 'benchpress' ) ] );
+    }
+}
+add_action( 'wp_ajax_benchpress_delete_snapshot', 'benchpress_delete_snapshot' );
+
+// AJAX: Clear all snapshots
+function benchpress_clear_all_snapshots() {
+    check_ajax_referer( 'benchpress_nonce' );
+
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'benchpress_snapshots';
+
+    // Delete all rows from the snapshots table
+    $deleted = $wpdb->query( "TRUNCATE TABLE $table_name" );
+
+    if ( $deleted !== false ) {
+        wp_send_json_success( [ 'message' => __( 'All snapshots deleted successfully.', 'benchpress' ) ] );
+    } else {
+        wp_send_json_error( [ 'message' => __( 'Failed to delete snapshots.', 'benchpress' ) ] );
+    }
+}
+add_action( 'wp_ajax_benchpress_clear_all_snapshots', 'benchpress_clear_all_snapshots' );
+
+// AJAX: Download snapshots as CSV
+function benchpress_download_snapshots() {
+    check_ajax_referer( 'benchpress_nonce' );
+
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'benchpress_snapshots';
+
+    // Fetch all snapshots
+    $snapshots = $wpdb->get_results( "SELECT * FROM $table_name ORDER BY created_at DESC", ARRAY_A );
+
+    if ( empty( $snapshots ) ) {
+        wp_die( __( 'No snapshots available to download.', 'benchpress' ) );
+    }
+
+    // Set headers to initiate a file download
+    header( 'Content-Type: text/csv; charset=utf-8' );
+    header( 'Content-Disposition: attachment; filename=snapshots.csv' );
+
+    // Open output stream for writing CSV data
+    $output = fopen( 'php://output', 'w' );
+
+    // Add CSV headers
+    fputcsv( $output, [ 'ID', 'Date', 'Benchmark Name', 'Execution Time', 'Description' ] );
+
+    // Populate CSV with snapshot data
+    foreach ( $snapshots as $snapshot ) {
+        $snapshot_data = json_decode( $snapshot['snapshot_data'], true );
+        foreach ( $snapshot_data as $benchmark ) {
+            fputcsv( $output, [
+                $snapshot['id'],
+                $snapshot['created_at'],
+                $benchmark['name'],
+                $benchmark['execution_time'],
+                $benchmark['description'],
+            ] );
+        }
+    }
+
+    fclose( $output );
+    exit;
+}
+add_action( 'wp_ajax_benchpress_download_snapshots', 'benchpress_download_snapshots' );

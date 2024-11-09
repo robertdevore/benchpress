@@ -23,3 +23,19 @@
     padding: 5px;
     box-sizing: border-box;
 }
+
+#benchpress-refresh-btn,
+#benchpress-snapshot-btn,
+#benchpress-clear-snapshots-btn,
+#benchpress-download-snapshots-btn {
+    line-height: 22px;
+    float: right;
+    margin-left: 12px;
+}
+
+.wp-core-ui .delete-snapshot-btn,
+.delete-snapshot-btn,
+.wp-core-ui .view-data-btn,
+.view-data-btn {
+    line-height: 22px;
+}
