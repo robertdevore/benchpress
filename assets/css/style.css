@@ -1,0 +1,25 @@
+/* BenchPress styles */
+
+/* Hide empty tablenav div to improve layout */
+.tablenav.top {
+    display: none;
+}
+
+.wp-list-table .column-execution_time,
+.wp-list-table .column-memory_usage {
+    text-align: right;
+}
+
+.wrap h1 {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    padding-bottom: 15px;
+}
+
+.wrap .form-table select {
+    width: 100%;
+    max-width: 300px;
+    padding: 5px;
+    box-sizing: border-box;
+}
