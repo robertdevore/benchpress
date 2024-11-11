@@ -1,0 +1,360 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: BenchPress\n"
+"POT-Creation-Date: 2024-11-10 23:42-0500\n"
+"PO-Revision-Date: 2024-11-10 23:42-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"X-Generator: Poedit 3.2.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: benchpress.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Poedit-SearchPathExcluded-1: vendor\n"
+
+#. Plugin Name of the plugin/theme
+#: benchpress.php:86 benchpress.php:87 benchpress.php:162
+msgid "BenchPress"
+msgstr ""
+
+#: benchpress.php:97 benchpress.php:98
+#: classes/BenchPress_Snapshots_Table.php:12
+msgid "Snapshots"
+msgstr ""
+
+#: benchpress.php:106 benchpress.php:107
+msgid "Settings"
+msgstr ""
+
+#: benchpress.php:126
+msgid "BenchPress Snapshots"
+msgstr ""
+
+#: benchpress.php:127
+msgid "Clear Snapshots"
+msgstr ""
+
+#: benchpress.php:128
+msgid "Download Snapshots"
+msgstr ""
+
+#: benchpress.php:130 benchpress.php:167 benchpress.php:225
+msgid "Documentation"
+msgstr ""
+
+#: benchpress.php:130 benchpress.php:167 benchpress.php:222
+msgid "Support"
+msgstr ""
+
+#: benchpress.php:130 benchpress.php:167
+msgid "More Plugins"
+msgstr ""
+
+#: benchpress.php:141
+msgid "Snapshot Data"
+msgstr ""
+
+#: benchpress.php:163
+msgid "Save Snapshot"
+msgstr ""
+
+#: benchpress.php:164
+msgid "Refresh Tests"
+msgstr ""
+
+#: benchpress.php:173
+#, php-format
+msgid "Total Execution Time: %s seconds"
+msgstr ""
+
+#: benchpress.php:220
+msgid "BenchPress Settings"
+msgstr ""
+
+#: benchpress.php:232
+msgid "Benchmark Options"
+msgstr ""
+
+#: benchpress.php:234
+msgid "Loop Count for Benchmarks"
+msgstr ""
+
+#: benchpress.php:236
+msgid "Enable Switch vs Match Benchmark"
+msgstr ""
+
+#: benchpress.php:238
+msgid "Enable Transient vs Direct Query Benchmark"
+msgstr ""
+
+#: benchpress.php:240
+msgid "Enable Post Meta Access Benchmark"
+msgstr ""
+
+#: benchpress.php:246
+msgid "WP_Query Settings"
+msgstr ""
+
+#: benchpress.php:250
+msgid "Query Type"
+msgstr ""
+
+#: benchpress.php:253
+msgid "Single Post"
+msgstr ""
+
+#: benchpress.php:254
+msgid "Multiple Posts"
+msgstr ""
+
+#: benchpress.php:261
+msgid "Single Post Query"
+msgstr ""
+
+#: benchpress.php:263
+msgid "Post ID"
+msgstr ""
+
+#: benchpress.php:270
+msgid "Multiple Post Query"
+msgstr ""
+
+#: benchpress.php:274
+msgid "Post Type"
+msgstr ""
+
+#: benchpress.php:287
+msgid "Number of Posts"
+msgstr ""
+
+#: benchpress.php:291
+msgid "Taxonomy"
+msgstr ""
+
+#: benchpress.php:293
+msgid "Select Taxonomy"
+msgstr ""
+
+#: benchpress.php:305
+msgid "Terms (comma-separated)"
+msgstr ""
+
+#: benchpress.php:309
+msgid "Order By"
+msgstr ""
+
+#: benchpress.php:312 classes/BenchPress_Snapshots_Table.php:23
+msgid "Date"
+msgstr ""
+
+#: benchpress.php:313
+msgid "Title"
+msgstr ""
+
+#: benchpress.php:314 classes/BenchPress_Snapshots_Table.php:22
+msgid "ID"
+msgstr ""
+
+#: benchpress.php:315
+msgid "Name"
+msgstr ""
+
+#: benchpress.php:316
+msgid "Author"
+msgstr ""
+
+#: benchpress.php:317
+msgid "Modified"
+msgstr ""
+
+#: benchpress.php:318
+msgid "Random"
+msgstr ""
+
+#: benchpress.php:330
+msgid "Order"
+msgstr ""
+
+#: benchpress.php:333
+msgid "Ascending"
+msgstr ""
+
+#: benchpress.php:334
+msgid "Descending"
+msgstr ""
+
+#: benchpress.php:340
+msgid "Save Settings"
+msgstr ""
+
+#: benchpress.php:440
+msgid "Snapshot saved!"
+msgstr ""
+
+#: benchpress.php:468
+msgid "Snapshot deleted successfully."
+msgstr ""
+
+#: benchpress.php:470
+msgid "Failed to delete snapshot."
+msgstr ""
+
+#: benchpress.php:473
+msgid "Invalid snapshot ID."
+msgstr ""
+
+#: benchpress.php:499
+msgid "All snapshots deleted successfully."
+msgstr ""
+
+#: benchpress.php:501
+msgid "Failed to delete snapshots."
+msgstr ""
+
+#: benchpress.php:527
+msgid "No snapshots available to download."
+msgstr ""
+
+#: classes/BenchPress_Snapshots_Table.php:11
+msgid "Snapshot"
+msgstr ""
+
+#: classes/BenchPress_Snapshots_Table.php:24
+msgid "Actions"
+msgstr ""
+
+#: classes/BenchPress_Snapshots_Table.php:88
+msgid "View Data"
+msgstr ""
+
+#: classes/BenchPress_Snapshots_Table.php:90
+msgid "Delete Snapshot"
+msgstr ""
+
+#: classes/BenchPress_Table.php:18
+msgid "Benchmark"
+msgstr ""
+
+#: classes/BenchPress_Table.php:19
+msgid "Benchmarks"
+msgstr ""
+
+#: classes/BenchPress_Table.php:31
+msgid "Benchmark Name"
+msgstr ""
+
+#: classes/BenchPress_Table.php:32
+msgid "Execution Time (s)"
+msgstr ""
+
+#: classes/BenchPress_Table.php:33
+msgid "Description"
+msgstr ""
+
+#: includes/helper-functions.php:56
+msgid "Switch vs Match"
+msgstr ""
+
+#: includes/helper-functions.php:59
+#, php-format
+msgid "The switch statement is %s by %s seconds compared to match."
+msgstr ""
+
+#: includes/helper-functions.php:121
+#, php-format
+msgid ""
+"Time to execute WP_Query by post ID %d, post type %s, ordering by %s (%s), "
+"averaged over %d iteration(s)."
+msgstr ""
+
+#: includes/helper-functions.php:130
+#, php-format
+msgid ""
+"Time to execute WP_Query for %d posts of post type %s, ordering by %s (%s), "
+"with taxonomy (%s) and terms (%s), averaged over %d iteration(s)."
+msgstr ""
+
+#: includes/helper-functions.php:135 includes/helper-functions.php:136
+msgid "none"
+msgstr ""
+
+#: includes/helper-functions.php:142
+msgid "WP_Query Benchmark"
+msgstr ""
+
+#: includes/helper-functions.php:182
+msgid "Array Merge vs Union"
+msgstr ""
+
+#: includes/helper-functions.php:185
+#, php-format
+msgid ""
+"Comparing array_merge and array union (+). The array_merge is %s by %s "
+"seconds on average over %d iterations."
+msgstr ""
+
+#: includes/helper-functions.php:226
+msgid "Dot Operator vs sprintf"
+msgstr ""
+
+#: includes/helper-functions.php:229
+#, php-format
+msgid ""
+"Comparing dot operator (.) and sprintf for string concatenation. The dot "
+"operator is %s by %s seconds on average over %d iterations."
+msgstr ""
+
+#: includes/helper-functions.php:308
+msgid "Transient Caching vs Direct Query"
+msgstr ""
+
+#: includes/helper-functions.php:311
+#, php-format
+msgid "Direct query is %s by %s seconds compared to transient caching."
+msgstr ""
+
+#: includes/helper-functions.php:378
+#, php-format
+msgid ""
+"Retrieving post meta for post ID %d using get_post_meta is %s by %s seconds "
+"compared to WP_Meta_Query."
+msgstr ""
+
+#: includes/helper-functions.php:384
+#, php-format
+msgid ""
+"Retrieving post meta for %d posts using get_post_meta is %s by %s seconds "
+"compared to WP_Meta_Query."
+msgstr ""
+
+#: includes/helper-functions.php:391
+msgid "get_post_meta() vs WP_Meta_Query"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/robertdevore/benchpress/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"A tool for benchmarking PHP code snippets and WordPress® queries to help "
+"developers optimize performance."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Robert DeVore"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://robertdevore.com/"
+msgstr ""
