@@ -1,0 +1,13 @@
+/* BenchPress icon - Default color */
+#adminmenu .toplevel_page_benchpress .wp-menu-image img {
+    width: 20px;
+    height: 20px;
+    color: rgb(255,255,255,0.8);
+    transition: color 0.3s ease;
+    padding: 7px 0;
+}
+
+/* BenchPress icon - Hover color */
+#adminmenu .toplevel_page_benchpress:hover .wp-menu-image img {
+    color: #FFF;
+}

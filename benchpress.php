@@ -27,6 +27,9 @@ if ( ! defined( 'WPINC' ) ) {
     die;
 }
 
+// Track the starting time of the plugin.
+$benchpress_start_time = microtime( true );
+
 // Define constants.
 define( 'BENCHPRESS_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'BENCHPRESS_VERSION', '1.0.0' );
@@ -85,8 +88,8 @@ function benchpress_admin_menu() {
         'manage_options',
         'benchpress',
         'benchpress_render_page',
-        'dashicons-performance',
-        5
+        plugin_dir_url( __FILE__ ) . 'assets/img/barbell-icon.svg',
+        2
     );
 
     add_submenu_page(
@@ -152,16 +155,22 @@ function benchpress_render_page() {
         return;
     }
 
+    global $benchpress_start_time;
+    $benchpress_execution_time = microtime( true ) - $benchpress_start_time;
+    $formatted_execution_time  = number_format( $benchpress_execution_time, 4 );
+
     echo '<div class="wrap"><h1>' . esc_html__( 'BenchPress', 'benchpress' );
     echo ' <button id="benchpress-snapshot-btn" class="button"><span class="dashicons dashicons-camera"></span> ' . esc_html__( 'Save Snapshot', 'benchpress' ) . '</button>';
     echo ' <button id="benchpress-refresh-btn" class="button"><span class="dashicons dashicons-update"></span> ' . esc_html__( 'Refresh Tests', 'benchpress' ) . '</button>';
-    echo '</h1><hr />';
+    echo '</h1>';
+    echo '<hr />';
     echo '<p><a href="https://robertdevore.com/benchpress-documentation/" target="_blank">' . esc_html__( 'Documentation', 'benchpress' ) . '</a> &middot; <a href="https://robertdevore.com/contact/" target="_blank">' . esc_html__( 'Support', 'benchpress' ) . '</a> &middot; <a href="https://robertdevore.com/wordpress-and-woocommerce-plugins/" target="_blank">' . esc_html__( 'More Plugins', 'benchpress' ) . '</a></p>';
 
     echo '<div id="benchpress-results">';
     $table = new BenchPress_Table();
     $table->prepare_items();
     $table->display();
+    echo '<p>' . sprintf( esc_html__( 'Total Execution Time: %s seconds', 'benchpress' ), $formatted_execution_time ) . '</p>';
     echo '</div></div>';
 }
 
@@ -353,6 +362,26 @@ function benchpress_enqueue_assets() {
     ] );
 }
 add_action( 'admin_enqueue_scripts', 'benchpress_enqueue_assets' );
+
+/**
+ * Enqueue custom admin styles for BenchPress plugin.
+ *
+ * This function loads the custom CSS file for the BenchPress plugin's 
+ * admin interface. It adds styling to the BenchPress menu icon in 
+ * the WordPress® admin sidebar, including hover effects.
+ *
+ * @since  1.0.0
+ * @return void
+ */
+function benchpress_enqueue_admin_styles() {
+    wp_enqueue_style(
+        'benchpress-admin-style',
+        plugin_dir_url( __FILE__ ) . 'assets/css/admin-style.css',
+        [],
+        BENCHPRESS_VERSION
+    );
+}
+add_action( 'admin_enqueue_scripts', 'benchpress_enqueue_admin_styles' );
 
 /**
  * Handles AJAX request to refresh benchmark results.
