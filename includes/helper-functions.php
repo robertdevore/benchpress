@@ -247,9 +247,66 @@ function benchpress_run_all_benchmarks() {
         $benchmarks[] = $switch_vs_match;
     }
 
+    // Run Transient vs Direct Query Benchmark only if enabled.
+    if ( get_option( 'benchpress_enable_transient_vs_query', 1 ) ) {
+        $benchmarks[] = benchpress_benchmark_transient_vs_direct_query();
+    }
+
     $benchmarks[] = benchpress_benchmark_wp_query_by_id();
     $benchmarks[] = benchpress_benchmark_array_merge();
     $benchmarks[] = benchpress_benchmark_string_concatenation();
 
+    // Return the benchmarks array directly
     return $benchmarks;
+}
+
+/**
+ * Benchmark Transient Caching vs. Direct Database Queries.
+ *
+ * @since 1.1.0
+ * @return array Benchmark data showing performance difference between transient caching and direct database querying.
+ */
+function benchpress_benchmark_transient_vs_direct_query() {
+    // Retrieve settings
+    $loop_count = get_option( 'benchpress_loop_count', 10 );
+    $post_type  = get_option( 'benchpress_post_type', 'post' );
+    global $wpdb;
+
+    // Build dynamic query.
+    $query = $wpdb->prepare(
+        "SELECT * FROM {$wpdb->posts} WHERE post_type = %s LIMIT %d",
+        $post_type,
+        $loop_count
+    );
+
+    // Measure execution time for direct query.
+    $start_direct = microtime( true );
+    $wpdb->get_results( $query );
+    $end_direct = microtime( true );
+    $direct_query_time = $end_direct - $start_direct;
+
+    // Measure execution time for transient caching.
+    $start_transient = microtime( true );
+    $cache_key       = 'benchpress_transient_query';
+    $results         = get_transient( $cache_key );
+
+    if ( false === $results ) {
+        $results = $wpdb->get_results( $query );
+        set_transient( $cache_key, $results, HOUR_IN_SECONDS );
+    }
+    $end_transient  = microtime( true );
+    $transient_time = $end_transient - $start_transient;
+
+    $difference = $direct_query_time - $transient_time;
+    $faster_or_slower = $difference > 0 ? 'slower' : 'faster';
+
+    return [
+        'name'          => esc_html__( 'Transient Caching vs Direct Query', 'benchpress' ),
+        'execution_time'=> round( abs( $difference ), 5 ),
+        'description'   => sprintf(
+            esc_html__( 'Direct query is %s by %s seconds compared to transient caching.', 'benchpress' ),
+            $faster_or_slower,
+            round( abs( $difference ), 5 )
+        ),
+    ];
 }

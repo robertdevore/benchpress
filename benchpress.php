@@ -1,22 +1,48 @@
 <?php
-/**
- * Plugin Name: BenchPress
- * Description: A tool for benchmarking PHP code snippets and WordPress queries to help developers optimize performance.
- * Version: 1.1
- * Author: Your Name
- * Text Domain: benchpress
- * License: GPL-2.0+
- * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- */
 
-// Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) ) {
-    exit;
+ /**
+  * The plugin bootstrap file
+  *
+  * @link              https://robertdevore.com
+  * @since             1.0.0
+  * @package           Back_In_Stock_Notifications
+  *
+  * @wordpress-plugin
+  *
+  * Plugin Name: BenchPress
+  * Description: A tool for benchmarking PHP code snippets and WordPress® queries to help developers optimize performance.
+  * Plugin URI:  https://github.com/robertdevore/benchpress/
+  * Version:     1.0.0
+  * Author:      Robert DeVore
+  * Author URI:  https://robertdevore.com/
+  * License:     GPL-2.0+
+  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
+  * Text Domain: benchpress
+  * Domain Path: /languages
+  * Update URI:  https://github.com/robertdevore/benchpress/
+  */
+ 
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+    die;
 }
 
 // Define constants.
 define( 'BENCHPRESS_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'BENCHPRESS_VERSION', '1.0.0' );
+
+// Add the Plugin Update Checker.
+require 'vendor/plugin-update-checker/plugin-update-checker.php';
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
+$myUpdateChecker = PucFactory::buildUpdateChecker(
+	'https://github.com/robertdevore/benchpress/',
+	__FILE__,
+	'benchpress'
+);
+
+// Set the branch that contains the stable release.
+$myUpdateChecker->setBranch( 'main' );
 
 /**
  * Summary of benchpress_create_snapshots_table
@@ -162,6 +188,7 @@ function benchpress_render_settings_page() {
         update_option( 'benchpress_tax_terms', sanitize_text_field( $_POST['benchpress_tax_terms'] ) );
         update_option( 'benchpress_orderby', sanitize_text_field( $_POST['benchpress_orderby'] ) );
         update_option( 'benchpress_order', in_array( $_POST['benchpress_order'], ['ASC', 'DESC'] ) ? $_POST['benchpress_order'] : 'ASC' );
+        update_option( 'benchpress_enable_transient_vs_query', isset( $_POST['benchpress_enable_transient_vs_query'] ) ? 1 : 0 );
     }
 
     // Retrieve saved settings.
@@ -198,6 +225,9 @@ function benchpress_render_settings_page() {
     echo '<td><input type="number" name="benchpress_loop_count" value="' . esc_attr( $loop_count ) . '" /></td></tr>';
     echo '<tr><th>' . esc_html__( 'Enable Switch vs Match Benchmark', 'benchpress' ) . '</th>';
     echo '<td><input type="checkbox" name="benchpress_enable_switch_vs_match" ' . checked( 1, $enable_switch_vs_match, false ) . ' /></td></tr>';
+    echo '<tr><th>' . esc_html__( 'Enable Transient vs Direct Query Benchmark', 'benchpress' ) . '</th>';
+    echo '<td><input type="checkbox" name="benchpress_enable_transient_vs_query" ' . checked( 1, get_option( 'benchpress_enable_transient_vs_query', 1 ), false ) . ' /></td></tr>';
+
     echo '</table>';
 
     // WP_Query Customization Section.
@@ -465,17 +495,17 @@ function benchpress_download_snapshots() {
         wp_die( esc_html__( 'No snapshots available to download.', 'benchpress' ) );
     }
 
-    // Set headers to initiate a file download.
+    // Set headers to initiate file download.
     header( 'Content-Type: text/csv; charset=utf-8' );
-    header( 'Content-Disposition: attachment; filename=snapshots.csv' );
+    header( 'Content-Disposition: attachment; filename=' . sanitize_title( get_bloginfo( 'name' ) ) . '-benchpress-' . date( 'Y-m-d_H-i-s' ) . '.csv' );
 
-    // Open output stream for writing CSV data.
+    // Open output stream for CSV.
     $output = fopen( 'php://output', 'w' );
 
     // Add CSV headers.
     fputcsv( $output, [ 'ID', 'Date', 'Benchmark Name', 'Execution Time', 'Description' ] );
 
-    // Populate CSV with snapshot data.
+    // Loop through each snapshot and format data.
     foreach ( $snapshots as $snapshot ) {
         $snapshot_data = json_decode( $snapshot['snapshot_data'], true );
         foreach ( $snapshot_data as $benchmark ) {
