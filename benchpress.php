@@ -189,6 +189,7 @@ function benchpress_render_settings_page() {
         update_option( 'benchpress_orderby', sanitize_text_field( $_POST['benchpress_orderby'] ) );
         update_option( 'benchpress_order', in_array( $_POST['benchpress_order'], ['ASC', 'DESC'] ) ? $_POST['benchpress_order'] : 'ASC' );
         update_option( 'benchpress_enable_transient_vs_query', isset( $_POST['benchpress_enable_transient_vs_query'] ) ? 1 : 0 );
+        update_option( 'benchpress_enable_meta_query_test', isset( $_POST['benchpress_enable_meta_query_test'] ) ? 1 : 0 );
     }
 
     // Retrieve saved settings.
@@ -227,7 +228,9 @@ function benchpress_render_settings_page() {
     echo '<td><input type="checkbox" name="benchpress_enable_switch_vs_match" ' . checked( 1, $enable_switch_vs_match, false ) . ' /></td></tr>';
     echo '<tr><th>' . esc_html__( 'Enable Transient vs Direct Query Benchmark', 'benchpress' ) . '</th>';
     echo '<td><input type="checkbox" name="benchpress_enable_transient_vs_query" ' . checked( 1, get_option( 'benchpress_enable_transient_vs_query', 1 ), false ) . ' /></td></tr>';
-
+    echo '<tr><th>' . esc_html__( 'Enable Post Meta Access Benchmark', 'benchpress' ) . '</th>';
+    echo '<td><input type="checkbox" name="benchpress_enable_meta_query_test" ' . checked( 1, get_option( 'benchpress_enable_meta_query_test', 1 ), false ) . ' /></td></tr>';
+    
     echo '</table>';
 
     // WP_Query Customization Section.

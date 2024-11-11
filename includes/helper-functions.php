@@ -247,16 +247,21 @@ function benchpress_run_all_benchmarks() {
         $benchmarks[] = $switch_vs_match;
     }
 
-    // Run Transient vs Direct Query Benchmark only if enabled.
     if ( get_option( 'benchpress_enable_transient_vs_query', 1 ) ) {
         $benchmarks[] = benchpress_benchmark_transient_vs_direct_query();
+    }
+
+    if ( get_option( 'benchpress_enable_meta_query_test', 1 ) ) {
+        $benchmarks[] = benchpress_benchmark_post_meta_access();
     }
 
     $benchmarks[] = benchpress_benchmark_wp_query_by_id();
     $benchmarks[] = benchpress_benchmark_array_merge();
     $benchmarks[] = benchpress_benchmark_string_concatenation();
 
-    // Return the benchmarks array directly
+    $benchmarks = apply_filters( 'benchpress_run_all_benchmarks', $benchmarks );
+
+    // Return the benchmarks array directly.
     return $benchmarks;
 }
 
@@ -308,5 +313,84 @@ function benchpress_benchmark_transient_vs_direct_query() {
             $faster_or_slower,
             round( abs( $difference ), 5 )
         ),
+    ];
+}
+
+/**
+ * Benchmark Post Meta Access Methods.
+ *
+ * Compares the performance of retrieving post meta using `get_post_meta()` vs. `WP_Meta_Query`.
+ *
+ * @since  1.0.0
+ * @return array|null Benchmark data showing performance difference, or null if settings are missing.
+ */
+function benchpress_benchmark_post_meta_access() {
+    if ( ! get_option( 'benchpress_enable_meta_query_test', 1 ) ) {
+        return;
+    }
+
+    $loop_count = get_option( 'benchpress_loop_count', 10 );
+    $meta_key   = get_option( 'benchpress_meta_key', '_sample_meta_key' );
+    $query_type = get_option( 'benchpress_query_type', 'single' );
+    $post_ids   = get_option( 'benchpress_post_id', [] );
+
+    // Handle case where there are no post IDs.
+    if ( empty( $post_ids ) || empty( $meta_key ) ) {
+        return;
+    }
+
+    // Prepare the post ID(s) for single or multiple post queries.
+    $post_ids = (array) $post_ids;
+
+    // Benchmark `get_post_meta`.
+    $start_meta = microtime( true );
+    for ( $i = 0; $i < $loop_count; $i++ ) {
+        foreach ( $post_ids as $post_id ) {
+            $meta_value = get_post_meta( $post_id, $meta_key, true );
+        }
+    }
+    $end_meta = microtime( true );
+    $get_post_meta_time = $end_meta - $start_meta;
+
+    // Benchmark `WP_Meta_Query`.
+    $start_query = microtime( true );
+    for ( $i = 0; $i < $loop_count; $i++ ) {
+        $meta_query = new WP_Meta_Query( [
+            'relation' => 'OR', // Use 'OR' to handle multiple posts.
+            array_map( function( $post_id ) use ( $meta_key, $meta_value ) {
+                return [
+                    'key'     => $meta_key,
+                    'value'   => $meta_value ?? '',
+                    'compare' => '=',
+                ];
+            }, $post_ids ),
+        ] );
+    }
+    $end_query = microtime( true );
+    $meta_query_time = $end_query - $start_query;
+
+    // Calculate the difference.
+    $difference = $get_post_meta_time - $meta_query_time;
+    $faster_or_slower = $difference > 0 ? 'slower' : 'faster';
+
+    // Format the description based on single or multiple posts.
+    $description = $query_type === 'single'
+        ? sprintf(
+            esc_html__( 'Retrieving post meta for post ID %d using get_post_meta is %s by %s seconds compared to WP_Meta_Query.', 'benchpress' ),
+            $post_ids[0],
+            $faster_or_slower,
+            round( abs( $difference ), 5 )
+        )
+        : sprintf(
+            esc_html__( 'Retrieving post meta for %d posts using get_post_meta is %s by %s seconds compared to WP_Meta_Query.', 'benchpress' ),
+            count( $post_ids ),
+            $faster_or_slower,
+            round( abs( $difference ), 5 )
+        );
+
+    return [
+        'name'          => esc_html__( 'get_post_meta() vs WP_Meta_Query', 'benchpress' ),
+        'execution_time'=> round( abs( $difference ), 5 ),
+        'description'   => $description,
     ];
 }
