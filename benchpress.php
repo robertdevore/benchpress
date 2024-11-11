@@ -5,7 +5,7 @@
   *
   * @link              https://robertdevore.com
   * @since             1.0.0
-  * @package           Back_In_Stock_Notifications
+  * @package           BenchPress
   *
   * @wordpress-plugin
   *
@@ -39,9 +39,9 @@ require 'vendor/plugin-update-checker/plugin-update-checker.php';
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 
 $myUpdateChecker = PucFactory::buildUpdateChecker(
-	'https://github.com/robertdevore/benchpress/',
-	__FILE__,
-	'benchpress'
+    'https://github.com/robertdevore/benchpress/',
+    __FILE__,
+    'benchpress'
 );
 
 // Set the branch that contains the stable release.
@@ -127,13 +127,13 @@ function benchpress_render_snapshots_page() {
     echo ' <button id="benchpress-clear-snapshots-btn" class="button" style="margin-left: 10px;"><span class="dashicons dashicons-trash"></span> ' . esc_html__( 'Clear Snapshots', 'benchpress' ) . '</button>';
     echo ' <button id="benchpress-download-snapshots-btn" class="button" style="margin-left: 10px;"><span class="dashicons dashicons-download"></span> ' . esc_html__( 'Download Snapshots', 'benchpress' ) . '</button>';
     echo '</h1><hr />';
-    echo '<p><a href="https://robertdevore.com/benchpress-documentation/" target="_blank">' . esc_html__( 'Documentation', 'benchpress' ) . '</a> &middot; <a href="https://robertdevore.com/contact/" target="_blank">' . esc_html__( 'Support', 'benchpress' ) . '</a> &middot; <a href="https://robertdevore.com/wordpress-and-woocommerce-plugins/" target="_blank">' . esc_html__( 'More Plugins', 'benchpress' ) . '</a></p>';
+    echo '<p><a href="https://robertdevore.com/articles/benchpress/" target="_blank">' . esc_html__( 'Documentation', 'benchpress' ) . '</a> &middot; <a href="https://robertdevore.com/contact/" target="_blank">' . esc_html__( 'Support', 'benchpress' ) . '</a> &middot; <a href="https://robertdevore.com/wordpress-and-woocommerce-plugins/" target="_blank">' . esc_html__( 'More Plugins', 'benchpress' ) . '</a></p>';
 
     $table = new BenchPress_Snapshots_Table();
     $table->prepare_items();
     $table->display();
 
-    // Modal HTML for viewing snapshot data.
+    // Modal HTML for viewing the snapshot data.
     echo '
         <div id="snapshotModal" class="snapshot-modal" style="display:none;">
             <div class="snapshot-modal-content">
@@ -177,7 +177,7 @@ function benchpress_render_page() {
 /**
  * Render the BenchPress settings page.
  *
- * @since 1.0.0
+ * @since  1.0.0
  * @return void
  */
 function benchpress_render_settings_page() {
@@ -221,7 +221,7 @@ function benchpress_render_settings_page() {
         <a id="benchpress-support-btn" href="https://robertdevore.com/contact/" target="_blank" class="button button-alt" style="margin-left: 10px;">
             <span class="dashicons dashicons-format-chat" style="vertical-align: middle;"></span> ' . esc_html__( 'Support', 'benchpress' ) . '
         </a>
-        <a id="benchpress-docs-btn" href="https://robertdevore.com/benchpress-documentation/" target="_blank" class="button button-alt" style="margin-left: 5px;">
+        <a id="benchpress-docs-btn" href="https://robertdevore.com/articles/benchpress/" target="_blank" class="button button-alt" style="margin-left: 5px;">
             <span class="dashicons dashicons-media-document" style="vertical-align: middle;"></span> ' . esc_html__( 'Documentation', 'benchpress' ) . '
         </a>
     </h1><hr />';

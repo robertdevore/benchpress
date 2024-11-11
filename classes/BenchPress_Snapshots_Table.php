@@ -1,5 +1,5 @@
 <?php
-// Snapshot List Table class
+// Snapshot List Table class.
 if ( ! class_exists( 'WP_List_Table' ) ) {
     require_once ABSPATH . 'wp-admin/includes/class-wp-list-table.php';
 }
@@ -8,8 +8,8 @@ class BenchPress_Snapshots_Table extends WP_List_Table {
 
     public function __construct() {
         parent::__construct([
-            'singular' => __( 'Snapshot', 'benchpress' ),
-            'plural'   => __( 'Snapshots', 'benchpress' ),
+            'singular' => esc_html__( 'Snapshot', 'benchpress' ),
+            'plural'   => esc_html__( 'Snapshots', 'benchpress' ),
             'ajax'     => false,
         ]);
     }
@@ -19,9 +19,9 @@ class BenchPress_Snapshots_Table extends WP_List_Table {
      */
     public function get_columns() {
         return [
-            'id'           => __( 'ID', 'benchpress' ),
-            'created_at'   => __( 'Date', 'benchpress' ),
-            'snapshot_data'=> __( 'Actions', 'benchpress' ),
+            'id'           => esc_html__( 'ID', 'benchpress' ),
+            'created_at'   => esc_html__( 'Date', 'benchpress' ),
+            'snapshot_data'=> esc_html__( 'Actions', 'benchpress' ),
         ];
     }
 
@@ -79,19 +79,19 @@ class BenchPress_Snapshots_Table extends WP_List_Table {
                 return esc_html( date_i18n( get_option( 'date_format' ), strtotime( $item['created_at'] ) ) );
             case 'snapshot_data':
                 $encoded_data = esc_attr( json_encode( json_decode( $item['snapshot_data'], true ) ) );
-    
-                // View (eye) and Delete (trash) buttons
+
+                // View (eye) and Delete (trash) buttons.
                 return sprintf(
                     '<button class="button view-data-btn" data-snapshot="%s" aria-label="%s"><span class="dashicons dashicons-visibility"></span></button>
                      <button class="button delete-snapshot-btn" data-id="%d" aria-label="%s" style="margin-left: 5px;"><span class="dashicons dashicons-trash"></span></button>',
                     $encoded_data,
-                    __( 'View Data', 'benchpress' ),
+                    esc_html__( 'View Data', 'benchpress' ),
                     esc_attr( $item['id'] ),
-                    __( 'Delete Snapshot', 'benchpress' )
+                    esc_html__( 'Delete Snapshot', 'benchpress' )
                 );
             default:
                 return print_r( $item, true );
         }
-    }    
-    
+    }
+
 }

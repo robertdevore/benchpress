@@ -1,6 +1,8 @@
 # BenchPress
 
-**BenchPress** is a WordPress plugin for benchmarking PHP code snippets, WordPress queries, and other critical operations. It's designed to help developers evaluate and optimize code performance by running benchmarks and capturing snapshots for comparison.
+**BenchPress** is a WordPress® plugin for benchmarking PHP code snippets, WordPress® queries, and other critical operations. 
+
+It's designed to help developers evaluate and optimize code performance by running benchmarks and capturing snapshots for later comparison.
 * * *
 
 ## Table of Contents
@@ -19,17 +21,17 @@
 ## Installation
 
 1. **Download** the plugin ZIP from the [GitHub repository](https://github.com/robertdevore/benchpress).
-2. **Upload** it via WordPress Admin:
+2. **Upload** it via WordPress® Admin:
     - Go to `Plugins` > `Add New`.
     - Click `Upload Plugin`, select the downloaded ZIP, and click `Install Now`.
-3. **Activate** the plugin via the `Plugins` page in the WordPress Admin.
+3. **Activate** the plugin via the `Plugins` page in the WordPress® Admin.
 * * *
 
 ## Setup
 
 BenchPress automatically creates a custom database table to store snapshots of benchmark results on activation. The plugin also includes settings to customize benchmark runs. To configure these:
 
-1. Go to `BenchPress > Settings` in your WordPress admin sidebar.
+1. Go to `BenchPress > Settings` in your WordPress® admin sidebar.
 2. Adjust loop counts, post IDs, and other options to customize how each benchmark runs.
 
 * * *
@@ -40,7 +42,7 @@ Once installed and configured, you can run benchmarks, view results, and save sn
 
 1. **Running Benchmarks**:
 
-    - Navigate to `BenchPress` in your WordPress admin menu.
+    - Navigate to `BenchPress` in your WordPress® admin menu.
     - Click `Refresh Tests` to run all enabled benchmarks and view results.
 2. **Saving Snapshots**:
 
@@ -67,42 +69,43 @@ BenchPress comes with several built-in benchmarks. Here's a quick overview:
 ### Adding Custom Benchmarks
 
 BenchPress includes a `benchpress_run_all_benchmarks` filter to allow you to add custom benchmarks. Here's an example of how to add your own benchmark:
-    ```
-    add_filter( 'benchpress_run_all_benchmarks', function( $benchmarks ) {
-        // Define your custom benchmark
-        $benchmarks[] = custom_benchmark_example();
-        return $benchmarks;
-    });
-    
-    // Custom benchmark function
-    function custom_benchmark_example() {
-        $loop_count = get_option( 'custom_benchmark_loop_count', 100000 );
-        $start_time = microtime( true );
-    
-        for ( $i = 0; $i < $loop_count; $i++ ) {
-            $result = $i * 2; // Example operation
-        }
-    
-        $execution_time = microtime( true ) - $start_time;
-    
-        return [
-            'name'          => esc_html__( 'Custom Benchmark', 'benchpress' ),
-            'execution_time'=> round( $execution_time, 5 ),
-            'description'   => sprintf( esc_html__( 'Executed a loop of %d iterations.', 'benchpress' ), $loop_count ),
-        ];
+
+```
+add_filter( 'benchpress_run_all_benchmarks', function( $benchmarks ) {
+    // Define your custom benchmark
+    $benchmarks[] = custom_benchmark_example();
+    return $benchmarks;
+});
+
+// Custom benchmark function
+function custom_benchmark_example() {
+    $loop_count = get_option( 'custom_benchmark_loop_count', 100000 );
+    $start_time = microtime( true );
+
+    for ( $i = 0; $i < $loop_count; $i++ ) {
+        $result = $i * 2; // Example operation
     }
-    ```
+
+    $execution_time = microtime( true ) - $start_time;
+
+    return [
+        'name'          => esc_html__( 'Custom Benchmark', 'benchpress' ),
+        'execution_time'=> round( $execution_time, 5 ),
+        'description'   => sprintf( esc_html__( 'Executed a loop of %d iterations.', 'benchpress' ), $loop_count ),
+    ];
+}
+```
 
 ### Removing Benchmarks
 
 If you want to remove a specific benchmark, you can use the same `benchpress_run_all_benchmarks` filter. For example, to remove the "Switch vs Match" benchmark:
-    ```
-    add_filter( 'benchpress_run_all_benchmarks', function( $benchmarks ) {
-        return array_filter( $benchmarks, function( $benchmark ) {
-            return $benchmark['name'] !== esc_html__( 'Switch vs Match', 'benchpress' );
-        });
+```
+add_filter( 'benchpress_run_all_benchmarks', function( $benchmarks ) {
+    return array_filter( $benchmarks, function( $benchmark ) {
+        return $benchmark['name'] !== esc_html__( 'Switch vs Match', 'benchpress' );
     });
-    ```
+});
+```
 
 ### Accessing Benchmark Data
 

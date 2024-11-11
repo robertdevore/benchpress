@@ -1,6 +1,5 @@
 /* BenchPress styles */
 
-/* Hide empty tablenav div to improve layout */
 .tablenav.top {
     display: none;
 }

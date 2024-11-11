@@ -38,10 +38,10 @@ class BenchPress_Table extends WP_List_Table {
      * Prepare items for the table.
      */
     public function prepare_items() {
-        $benchmarks = benchpress_run_all_benchmarks();
+        $benchmarks  = benchpress_run_all_benchmarks();
         $this->items = $benchmarks;
 
-        $columns  = $this->get_columns();
+        $columns = $this->get_columns();
         $this->_column_headers = [ $columns, [], [] ];
     }
 

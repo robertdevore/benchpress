@@ -8,7 +8,7 @@
 /**
  * Benchmark Switch vs Match performance.
  *
- * @since  1.1.0
+ * @since  1.0.0
  * @return void|array Benchmark data showing performance difference between switch and match.
  */
 function benchpress_benchmark_switch_vs_match() {
@@ -18,7 +18,7 @@ function benchpress_benchmark_switch_vs_match() {
 
     $loop_count = get_option( 'benchpress_loop_count', 1000000 );
 
-    // Measure execution time for switch statement
+    // Measure execution time for switch statement.
     $start_switch = microtime( true );
     for ( $i = 0; $i < $loop_count; $i++ ) {
         switch ( $i % 3 ) {
@@ -36,7 +36,7 @@ function benchpress_benchmark_switch_vs_match() {
     $end_switch  = microtime( true );
     $switch_time = $end_switch - $start_switch;
 
-    // Measure execution time for match expression
+    // Measure execution time for match expression.
     $start_match = microtime( true );
     for ( $i = 0; $i < $loop_count; $i++ ) {
         $result = match ( $i % 3 ) {
@@ -66,7 +66,7 @@ function benchpress_benchmark_switch_vs_match() {
 /**
  * Benchmark WP_Query by ID with customizable options.
  *
- * @since  1.1.0
+ * @since  1.0.0
  * @return array Benchmark data for WP_Query by ID.
  */
 function benchpress_benchmark_wp_query_by_id() {
@@ -88,12 +88,12 @@ function benchpress_benchmark_wp_query_by_id() {
         'order'          => $order,
     ];
 
-    // Add single post ID if it's a single post query
+    // Add single post ID if it's a single post query.
     if ( $query_type === 'single' && ! empty( $post_id ) ) {
         $args['p'] = is_array( $post_id ) ? reset( $post_id ) : $post_id;
     }
 
-    // Add taxonomy query if it's a multiple posts query
+    // Add taxonomy query if it's a multiple posts query.
     if ( $query_type === 'multiple' && ! empty( $taxonomy ) && ! empty( $tax_terms ) ) {
         $args['tax_query'] = [
             [
@@ -104,7 +104,7 @@ function benchpress_benchmark_wp_query_by_id() {
         ];
     }
 
-    // Benchmark execution time
+    // Benchmark execution time.
     $start = microtime( true );
     for ( $i = 0; $i < $iterations; $i++ ) {
         $query = new WP_Query( $args );
@@ -115,7 +115,7 @@ function benchpress_benchmark_wp_query_by_id() {
     $total_time   = $end - $start;
     $average_time = $total_time / $iterations;
 
-    // Generate description based on query type
+    // Generate description based on query type.
     if ( $query_type === 'single' ) {
         $description = sprintf(
             esc_html__( 'Time to execute WP_Query by post ID %d, post type %s, ordering by %s (%s), averaged over %d iteration(s).', 'benchpress' ),
@@ -158,15 +158,15 @@ function benchpress_benchmark_array_merge() {
     $array1 = range( 1, 100 );
     $array2 = range( 101, 200 );
 
-    // Measure execution time for array_merge
+    // Measure execution time for array_merge.
     $start_merge = microtime( true );
     for ( $i = 0; $i < $loop_count; $i++ ) {
         $result = array_merge( $array1, $array2 );
     }
-    $end_merge = microtime( true );
+    $end_merge  = microtime( true );
     $merge_time = $end_merge - $start_merge;
 
-    // Measure execution time for array union (+)
+    // Measure execution time for array union (+).
     $start_union = microtime( true );
     for ( $i = 0; $i < $loop_count; $i++ ) {
         $result = $array1 + $array2;
@@ -174,8 +174,8 @@ function benchpress_benchmark_array_merge() {
     $end_union = microtime( true );
     $union_time = $end_union - $start_union;
 
-    // Calculate difference and which method is faster
-    $difference = $merge_time - $union_time;
+    // Calculate difference and which method is faster.
+    $difference       = $merge_time - $union_time;
     $faster_or_slower = $difference > 0 ? 'slower' : 'faster';
 
     return [
@@ -202,24 +202,24 @@ function benchpress_benchmark_string_concatenation() {
     $string1 = "Hello";
     $string2 = "World";
 
-    // Measure execution time for dot operator
+    // Measure execution time for dot operator.
     $start_dot = microtime( true );
     for ( $i = 0; $i < $loop_count; $i++ ) {
         $result = $string1 . ' ' . $string2;
     }
-    $end_dot = microtime( true );
+    $end_dot  = microtime( true );
     $dot_time = $end_dot - $start_dot;
 
-    // Measure execution time for sprintf
+    // Measure execution time for sprintf.
     $start_sprintf = microtime( true );
     for ( $i = 0; $i < $loop_count; $i++ ) {
         $result = sprintf( "%s %s", $string1, $string2 );
     }
-    $end_sprintf = microtime( true );
+    $end_sprintf  = microtime( true );
     $sprintf_time = $end_sprintf - $start_sprintf;
 
-    // Calculate difference and determine which method is faster
-    $difference = $dot_time - $sprintf_time;
+    // Calculate difference and determine which method is faster.
+    $difference       = $dot_time - $sprintf_time;
     $faster_or_slower = $difference > 0 ? 'slower' : 'faster';
 
     return [
@@ -261,18 +261,17 @@ function benchpress_run_all_benchmarks() {
 
     $benchmarks = apply_filters( 'benchpress_run_all_benchmarks', $benchmarks );
 
-    // Return the benchmarks array directly.
     return $benchmarks;
 }
 
 /**
  * Benchmark Transient Caching vs. Direct Database Queries.
  *
- * @since 1.1.0
+ * @since  1.0.0
  * @return array Benchmark data showing performance difference between transient caching and direct database querying.
  */
 function benchpress_benchmark_transient_vs_direct_query() {
-    // Retrieve settings
+    // Retrieve settings.
     $loop_count = get_option( 'benchpress_loop_count', 10 );
     $post_type  = get_option( 'benchpress_post_type', 'post' );
     global $wpdb;
@@ -284,7 +283,7 @@ function benchpress_benchmark_transient_vs_direct_query() {
         $loop_count
     );
 
-    // Measure execution time for direct query.
+    // Measure execution time for direct query..
     $start_direct = microtime( true );
     $wpdb->get_results( $query );
     $end_direct = microtime( true );
@@ -302,7 +301,7 @@ function benchpress_benchmark_transient_vs_direct_query() {
     $end_transient  = microtime( true );
     $transient_time = $end_transient - $start_transient;
 
-    $difference = $direct_query_time - $transient_time;
+    $difference       = $direct_query_time - $transient_time;
     $faster_or_slower = $difference > 0 ? 'slower' : 'faster';
 
     return [
@@ -349,14 +348,14 @@ function benchpress_benchmark_post_meta_access() {
             $meta_value = get_post_meta( $post_id, $meta_key, true );
         }
     }
-    $end_meta = microtime( true );
+    $end_meta           = microtime( true );
     $get_post_meta_time = $end_meta - $start_meta;
 
     // Benchmark `WP_Meta_Query`.
     $start_query = microtime( true );
     for ( $i = 0; $i < $loop_count; $i++ ) {
         $meta_query = new WP_Meta_Query( [
-            'relation' => 'OR', // Use 'OR' to handle multiple posts.
+            'relation' => 'OR',
             array_map( function( $post_id ) use ( $meta_key, $meta_value ) {
                 return [
                     'key'     => $meta_key,
@@ -366,11 +365,11 @@ function benchpress_benchmark_post_meta_access() {
             }, $post_ids ),
         ] );
     }
-    $end_query = microtime( true );
+    $end_query       = microtime( true );
     $meta_query_time = $end_query - $start_query;
 
     // Calculate the difference.
-    $difference = $get_post_meta_time - $meta_query_time;
+    $difference       = $get_post_meta_time - $meta_query_time;
     $faster_or_slower = $difference > 0 ? 'slower' : 'faster';
 
     // Format the description based on single or multiple posts.
