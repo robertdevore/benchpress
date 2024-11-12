@@ -74,6 +74,10 @@ register_activation_hook( __FILE__, 'benchpress_create_snapshots_table' );
 require_once BENCHPRESS_PLUGIN_DIR . 'classes/BenchPress_Table.php';
 require_once BENCHPRESS_PLUGIN_DIR . 'classes/BenchPress_Snapshots_Table.php';
 require_once BENCHPRESS_PLUGIN_DIR . 'includes/helper-functions.php';
+// Include PHP 8-specific functions if the server's PHP version is 8.0 or above.
+if ( version_compare( PHP_VERSION, '8.0', '>=' ) ) {
+    require_once BENCHPRESS_PLUGIN_DIR . 'includes/php-8.0-functions.php';
+}
 
 /**
  * Register BenchPress admin menu.
@@ -233,13 +237,16 @@ function benchpress_render_settings_page() {
     echo '<table class="form-table">';
     echo '<tr><th>' . esc_html__( 'Loop Count for Benchmarks', 'benchpress' ) . '</th>';
     echo '<td><input type="number" name="benchpress_loop_count" value="' . esc_attr( $loop_count ) . '" /></td></tr>';
-    echo '<tr><th>' . esc_html__( 'Enable Switch vs Match Benchmark', 'benchpress' ) . '</th>';
-    echo '<td><input type="checkbox" name="benchpress_enable_switch_vs_match" ' . checked( 1, $enable_switch_vs_match, false ) . ' /></td></tr>';
+    // Only add this setting when PHP 8.0+ is installed.
+    if ( version_compare( PHP_VERSION, '8.0', '>=' ) ) {
+        echo '<tr><th>' . esc_html__( 'Enable Switch vs Match Benchmark', 'benchpress' ) . '</th>';
+        echo '<td><input type="checkbox" name="benchpress_enable_switch_vs_match" ' . checked( 1, $enable_switch_vs_match, false ) . ' /></td></tr>';
+    }    
     echo '<tr><th>' . esc_html__( 'Enable Transient vs Direct Query Benchmark', 'benchpress' ) . '</th>';
     echo '<td><input type="checkbox" name="benchpress_enable_transient_vs_query" ' . checked( 1, get_option( 'benchpress_enable_transient_vs_query', 1 ), false ) . ' /></td></tr>';
     echo '<tr><th>' . esc_html__( 'Enable Post Meta Access Benchmark', 'benchpress' ) . '</th>';
     echo '<td><input type="checkbox" name="benchpress_enable_meta_query_test" ' . checked( 1, get_option( 'benchpress_enable_meta_query_test', 1 ), false ) . ' /></td></tr>';
-    
+
     echo '</table>';
 
     // WP_Query Customization Section.
