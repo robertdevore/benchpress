@@ -12,7 +12,7 @@
   * Plugin Name: BenchPress
   * Description: A tool for benchmarking PHP code snippets and WordPress® queries to help developers optimize performance.
   * Plugin URI:  https://github.com/robertdevore/benchpress/
-  * Version:     1.0.1
+  * Version:     1.0.2
   * Author:      Robert DeVore
   * Author URI:  https://robertdevore.com/
   * License:     GPL-2.0+
@@ -32,7 +32,7 @@ $benchpress_start_time = microtime( true );
 
 // Define constants.
 define( 'BENCHPRESS_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
-define( 'BENCHPRESS_VERSION', '1.0.1' );
+define( 'BENCHPRESS_VERSION', '1.0.2' );
 
 // Add the Plugin Update Checker.
 require 'vendor/plugin-update-checker/plugin-update-checker.php';
