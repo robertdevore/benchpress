@@ -336,3 +336,36 @@ function benchpress_benchmark_post_meta_access() {
         'description'   => $description,
     ];
 }
+
+/**
+ * Outputs the BenchPress admin header with support and documentation links.
+ *
+ * @param string $title The page title to display.
+ *
+ * @since  1.1.0
+ * @return void
+ */
+function benchpress_admin_header( $title ) {
+    // Output the title.
+    echo '<h1>' . esc_html( $title );
+    // Choose which buttons to display based on which title is passed.
+    if ( esc_html__( 'BenchPress Snapshots', 'benchpress' ) == $title ) {
+        echo ' <button id="benchpress-clear-snapshots-btn" class="button" style="margin-left: 10px;"><span class="dashicons dashicons-trash"></span> ' . esc_html__( 'Clear Snapshots', 'benchpress' ) . '</button>';
+        echo ' <button id="benchpress-download-snapshots-btn" class="button" style="margin-left: 10px;"><span class="dashicons dashicons-download"></span> ' . esc_html__( 'Download Snapshots', 'benchpress' ) . '</button>';
+        echo '</h1><hr />';    
+    } elseif ( esc_html__( 'BenchPress Settings', 'benchpress' ) == $title ) {
+        echo '<a id="benchpress-support-btn" href="https://robertdevore.com/contact/" target="_blank" class="button button-alt" style="margin-left: 10px;">
+                <span class="dashicons dashicons-format-chat" style="vertical-align: middle;"></span> ' . esc_html__( 'Support', 'benchpress' ) . '
+            </a>
+            <a id="benchpress-docs-btn" href="https://robertdevore.com/articles/benchpress/" target="_blank" class="button button-alt" style="margin-left: 5px;">
+                <span class="dashicons dashicons-media-document" style="vertical-align: middle;"></span> ' . esc_html__( 'Documentation', 'benchpress' ) . '
+            </a>
+        </h1><hr />';
+    } elseif ( esc_html__( 'BenchPress', 'benchpress' ) == $title ) {
+        echo ' <button id="benchpress-snapshot-btn" class="button"><span class="dashicons dashicons-camera"></span> ' . esc_html__( 'Save Snapshot', 'benchpress' ) . '</button>';
+        echo ' <button id="benchpress-refresh-btn" class="button"><span class="dashicons dashicons-update"></span> ' . esc_html__( 'Refresh Tests', 'benchpress' ) . '</button>';
+        echo '</h1><hr />';
+    }
+    // Output the text links that display underneath the title.
+    echo '<p><a href="https://robertdevore.com/benchpress-documentation/" target="_blank">' . esc_html__( 'Documentation', 'benchpress' ) . '</a> &middot; <a href="https://robertdevore.com/contact/" target="_blank">' . esc_html__( 'Support', 'benchpress' ) . '</a> &middot; <a href="https://robertdevore.com/wordpress-and-woocommerce-plugins/" target="_blank">' . esc_html__( 'More Plugins', 'benchpress' ) . '</a></p>';
+}

@@ -127,11 +127,8 @@ add_action( 'admin_menu', 'benchpress_admin_menu' );
  * @return void
  */
 function benchpress_render_snapshots_page() {
-    echo '<div class="wrap"><h1>' . esc_html__( 'BenchPress Snapshots', 'benchpress' );
-    echo ' <button id="benchpress-clear-snapshots-btn" class="button" style="margin-left: 10px;"><span class="dashicons dashicons-trash"></span> ' . esc_html__( 'Clear Snapshots', 'benchpress' ) . '</button>';
-    echo ' <button id="benchpress-download-snapshots-btn" class="button" style="margin-left: 10px;"><span class="dashicons dashicons-download"></span> ' . esc_html__( 'Download Snapshots', 'benchpress' ) . '</button>';
-    echo '</h1><hr />';
-    echo '<p><a href="https://robertdevore.com/articles/benchpress/" target="_blank">' . esc_html__( 'Documentation', 'benchpress' ) . '</a> &middot; <a href="https://robertdevore.com/contact/" target="_blank">' . esc_html__( 'Support', 'benchpress' ) . '</a> &middot; <a href="https://robertdevore.com/wordpress-and-woocommerce-plugins/" target="_blank">' . esc_html__( 'More Plugins', 'benchpress' ) . '</a></p>';
+    echo '<div class="wrap">';
+    benchpress_admin_header( esc_html__( 'BenchPress Settings', 'benchpress' ) );
 
     $table = new BenchPress_Snapshots_Table();
     $table->prepare_items();
@@ -163,12 +160,8 @@ function benchpress_render_page() {
     $benchpress_execution_time = microtime( true ) - $benchpress_start_time;
     $formatted_execution_time  = number_format( $benchpress_execution_time, 4 );
 
-    echo '<div class="wrap"><h1>' . esc_html__( 'BenchPress', 'benchpress' );
-    echo ' <button id="benchpress-snapshot-btn" class="button"><span class="dashicons dashicons-camera"></span> ' . esc_html__( 'Save Snapshot', 'benchpress' ) . '</button>';
-    echo ' <button id="benchpress-refresh-btn" class="button"><span class="dashicons dashicons-update"></span> ' . esc_html__( 'Refresh Tests', 'benchpress' ) . '</button>';
-    echo '</h1>';
-    echo '<hr />';
-    echo '<p><a href="https://robertdevore.com/benchpress-documentation/" target="_blank">' . esc_html__( 'Documentation', 'benchpress' ) . '</a> &middot; <a href="https://robertdevore.com/contact/" target="_blank">' . esc_html__( 'Support', 'benchpress' ) . '</a> &middot; <a href="https://robertdevore.com/wordpress-and-woocommerce-plugins/" target="_blank">' . esc_html__( 'More Plugins', 'benchpress' ) . '</a></p>';
+    echo '<div class="wrap">';
+    benchpress_admin_header( esc_html__( 'BenchPress', 'benchpress' ) );
 
     echo '<div id="benchpress-results">';
     $table = new BenchPress_Table();
@@ -221,14 +214,8 @@ function benchpress_render_settings_page() {
     $post_types = get_post_types( [ 'public' => true ], 'objects' );
     $taxonomies = get_taxonomies( [ 'public' => true ], 'objects' );
 
-    echo '<div class="wrap"><h1>' . esc_html__( 'BenchPress Settings', 'benchpress' ) . '
-        <a id="benchpress-support-btn" href="https://robertdevore.com/contact/" target="_blank" class="button button-alt" style="margin-left: 10px;">
-            <span class="dashicons dashicons-format-chat" style="vertical-align: middle;"></span> ' . esc_html__( 'Support', 'benchpress' ) . '
-        </a>
-        <a id="benchpress-docs-btn" href="https://robertdevore.com/articles/benchpress/" target="_blank" class="button button-alt" style="margin-left: 5px;">
-            <span class="dashicons dashicons-media-document" style="vertical-align: middle;"></span> ' . esc_html__( 'Documentation', 'benchpress' ) . '
-        </a>
-    </h1><hr />';
+    echo '<div class="wrap">';
+    benchpress_admin_header( esc_html__( 'BenchPress Settings', 'benchpress' ) );
     echo '<form method="post">';
     wp_nonce_field( 'benchpress_save_settings', 'benchpress_settings_nonce' );
 
