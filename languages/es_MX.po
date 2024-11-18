@@ -1,0 +1,380 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: BenchPress\n"
+"POT-Creation-Date: 2024-11-17 23:36-0500\n"
+"PO-Revision-Date: 2024-11-17 23:45-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es_MX\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.5\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: benchpress.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Poedit-SearchPathExcluded-1: vendor\n"
+
+#: benchpress.php:50 benchpress.php:131 benchpress.php:132
+msgid "Settings"
+msgstr "Ajustes"
+
+#. Plugin Name of the plugin/theme
+#: benchpress.php:111 benchpress.php:112 benchpress.php:185
+#: includes/helper-functions.php:364
+msgid "BenchPress"
+msgstr "BenchPress"
+
+#: benchpress.php:122 benchpress.php:123
+#: classes/BenchPress_Snapshots_Table.php:12
+msgid "Snapshots"
+msgstr "Instantáneas"
+
+#: benchpress.php:152 benchpress.php:239 includes/helper-functions.php:356
+msgid "BenchPress Settings"
+msgstr "Configuración de BenchPress"
+
+#: benchpress.php:163
+msgid "Snapshot Data"
+msgstr "Datos de instantáneas"
+
+#: benchpress.php:191
+#, php-format
+msgid "Total Execution Time: %s seconds"
+msgstr "Tiempo total de ejecución: %s segundos"
+
+#: benchpress.php:244
+msgid "Benchmark Options"
+msgstr "Opciones de referencia"
+
+#: benchpress.php:246
+msgid "Loop Count for Benchmarks"
+msgstr "Recuento de bucles para puntos de referencia"
+
+#: benchpress.php:250
+msgid "Enable Switch vs Match Benchmark"
+msgstr "Habilitar el punto de referencia Switch vs Match"
+
+#: benchpress.php:253
+msgid "Enable Transient vs Direct Query Benchmark"
+msgstr "Habilitar la comparación entre consulta directa y transitoria"
+
+#: benchpress.php:255
+msgid "Enable Post Meta Access Benchmark"
+msgstr "Habilitar el punto de referencia de acceso a metadatos de publicación"
+
+#: benchpress.php:261
+msgid "WP_Query Settings"
+msgstr "Configuración de WP_Query"
+
+#: benchpress.php:265
+msgid "Query Type"
+msgstr "Tipo de consulta"
+
+#: benchpress.php:268
+msgid "Single Post"
+msgstr "Publicación individual"
+
+#: benchpress.php:269
+msgid "Multiple Posts"
+msgstr "Publicaciones múltiples"
+
+#: benchpress.php:276
+msgid "Single Post Query"
+msgstr "Consulta de publicación única"
+
+#: benchpress.php:278
+msgid "Post ID"
+msgstr "ID de Publicación"
+
+#: benchpress.php:285
+msgid "Multiple Post Query"
+msgstr "Consulta de publicaciones múltiples"
+
+#: benchpress.php:289
+msgid "Post Type"
+msgstr "Tipo de mensaje"
+
+#: benchpress.php:302
+msgid "Number of Posts"
+msgstr "Cantidad de publicaciones"
+
+#: benchpress.php:306
+msgid "Taxonomy"
+msgstr "Taxonomía"
+
+#: benchpress.php:308
+msgid "Select Taxonomy"
+msgstr "Elige una taxonomía"
+
+#: benchpress.php:320
+msgid "Terms (comma-separated)"
+msgstr "Términos (separados por comas)"
+
+#: benchpress.php:324
+msgid "Order By"
+msgstr "Ordenar por"
+
+#: benchpress.php:327 classes/BenchPress_Snapshots_Table.php:26
+msgid "Date"
+msgstr "Fecha"
+
+#: benchpress.php:328
+msgid "Title"
+msgstr "Título"
+
+#: benchpress.php:329 classes/BenchPress_Snapshots_Table.php:25
+msgid "ID"
+msgstr "ID"
+
+#: benchpress.php:330
+msgid "Name"
+msgstr "Nombre"
+
+#: benchpress.php:331
+msgid "Author"
+msgstr "Autor"
+
+#: benchpress.php:332
+msgid "Modified"
+msgstr "Modificado"
+
+#: benchpress.php:333
+msgid "Random"
+msgstr "Aleatorio"
+
+#: benchpress.php:345
+msgid "Order"
+msgstr "Orden"
+
+#: benchpress.php:348
+msgid "Ascending"
+msgstr "Ascendente"
+
+#: benchpress.php:349
+msgid "Descending"
+msgstr "Descendente"
+
+#: benchpress.php:355
+msgid "Save Settings"
+msgstr "Guardar Ajustes"
+
+#: benchpress.php:464
+msgid "Snapshot saved!"
+msgstr "¡Instantánea guardada!"
+
+#: benchpress.php:491
+msgid "Snapshot deleted successfully."
+msgstr "Instantánea eliminada exitosamente."
+
+#: benchpress.php:493
+msgid "Failed to delete snapshot."
+msgstr "No se pudo eliminar la instantánea."
+
+#: benchpress.php:496
+msgid "Invalid snapshot ID."
+msgstr "ID de instantánea no válida."
+
+#: benchpress.php:522
+msgid "All snapshots deleted successfully."
+msgstr "Todas las instantáneas se eliminaron correctamente."
+
+#: benchpress.php:524
+msgid "Failed to delete snapshots."
+msgstr "No se pudieron eliminar las instantáneas."
+
+#: benchpress.php:550
+msgid "No snapshots available to download."
+msgstr "No hay instantáneas disponibles para descargar."
+
+#: classes/BenchPress_Snapshots_Table.php:11
+msgid "Snapshot"
+msgstr "Instantánea"
+
+#: classes/BenchPress_Snapshots_Table.php:27
+msgid "Actions"
+msgstr "Acciones"
+
+#: classes/BenchPress_Snapshots_Table.php:100
+msgid "View Data"
+msgstr "Ver datos"
+
+#: classes/BenchPress_Snapshots_Table.php:102
+msgid "Delete Snapshot"
+msgstr "Eliminar instantánea"
+
+#: classes/BenchPress_Table.php:18
+msgid "Benchmark"
+msgstr "Punto de referencia"
+
+#: classes/BenchPress_Table.php:19
+msgid "Benchmarks"
+msgstr "Referencia"
+
+#: classes/BenchPress_Table.php:32
+msgid "Benchmark Name"
+msgstr "Nombre del punto de referencia"
+
+#: classes/BenchPress_Table.php:33
+msgid "Execution Time (s)"
+msgstr "Tiempo de ejecución (s)"
+
+#: classes/BenchPress_Table.php:34
+msgid "Description"
+msgstr "Descripción"
+
+#: includes/helper-functions.php:63
+#, php-format
+msgid ""
+"Time to execute WP_Query by post ID %d, post type %s, ordering by %s (%s), "
+"averaged over %d iteration(s)."
+msgstr ""
+"Tiempo para ejecutar WP_Query por ID de publicación %d, tipo de publicación "
+"%s, ordenando por %s (%s), promediado en %d iteraciones."
+
+#: includes/helper-functions.php:72
+#, php-format
+msgid ""
+"Time to execute WP_Query for %d posts of post type %s, ordering by %s (%s), "
+"with taxonomy (%s) and terms (%s), averaged over %d iteration(s)."
+msgstr ""
+"Es hora de ejecutar WP_Query para %d publicaciones del tipo de publicación "
+"%s, ordenando por %s (%s), con taxonomía (%s) y términos (%s), promediado "
+"en %d iteraciones."
+
+#: includes/helper-functions.php:77 includes/helper-functions.php:78
+msgid "none"
+msgstr "ninguno"
+
+#: includes/helper-functions.php:84
+msgid "WP_Query Benchmark"
+msgstr "Punto de referencia de WP_Query"
+
+#: includes/helper-functions.php:124
+msgid "Array Merge vs Union"
+msgstr "Fusión y unión de matrices"
+
+#: includes/helper-functions.php:127
+#, php-format
+msgid ""
+"Comparing array_merge and array union (+). The array_merge is %s by %s "
+"seconds on average over %d iterations."
+msgstr ""
+"Comparación de array_merge y array union (+). El array_merge dura %s por %s "
+"segundos en promedio durante %d iteraciones."
+
+#: includes/helper-functions.php:168
+msgid "Dot Operator vs sprintf"
+msgstr "Operador de puntos vs sprintf"
+
+#: includes/helper-functions.php:171
+#, php-format
+msgid ""
+"Comparing dot operator (.) and sprintf for string concatenation. The dot "
+"operator is %s by %s seconds on average over %d iterations."
+msgstr ""
+"Comparación del operador de punto (.) y sprintf para la concatenación de "
+"cadenas. El operador de punto se ejecuta %s por %s segundos en promedio "
+"durante %d iteraciones."
+
+#: includes/helper-functions.php:251
+msgid "Transient Caching vs Direct Query"
+msgstr "Almacenamiento en caché transitorio frente a consulta directa"
+
+#: includes/helper-functions.php:254
+#, php-format
+msgid "Direct query is %s by %s seconds compared to transient caching."
+msgstr ""
+"La consulta directa es de %s por %s segundos en comparación con el "
+"almacenamiento en caché transitorio."
+
+#: includes/helper-functions.php:321
+#, php-format
+msgid ""
+"Retrieving post meta for post ID %d using get_post_meta is %s by %s seconds "
+"compared to WP_Meta_Query."
+msgstr ""
+"La recuperación de metadatos de publicaciones para el ID de publicación %d "
+"usando get_post_meta demora %s por %s segundos en comparación con "
+"WP_Meta_Query."
+
+#: includes/helper-functions.php:327
+#, php-format
+msgid ""
+"Retrieving post meta for %d posts using get_post_meta is %s by %s seconds "
+"compared to WP_Meta_Query."
+msgstr ""
+"La recuperación de metadatos de publicaciones para %d publicaciones usando "
+"get_post_meta demora %s por %s segundos en comparación con WP_Meta_Query."
+
+#: includes/helper-functions.php:334
+msgid "get_post_meta() vs WP_Meta_Query"
+msgstr "Comparación entre get_post_meta() y WP_Meta_Query"
+
+#: includes/helper-functions.php:352
+msgid "BenchPress Snapshots"
+msgstr "Instantáneas de BenchPress"
+
+#: includes/helper-functions.php:353
+msgid "Clear Snapshots"
+msgstr "Instantáneas claras"
+
+#: includes/helper-functions.php:354
+msgid "Download Snapshots"
+msgstr "Descargar instantáneas"
+
+#: includes/helper-functions.php:358 includes/helper-functions.php:370
+msgid "Support"
+msgstr "Soporte"
+
+#: includes/helper-functions.php:361 includes/helper-functions.php:370
+msgid "Documentation"
+msgstr "Documentación"
+
+#: includes/helper-functions.php:365
+msgid "Save Snapshot"
+msgstr "Guardar instantánea"
+
+#: includes/helper-functions.php:366
+msgid "Refresh Tests"
+msgstr "Pruebas de actualización"
+
+#: includes/helper-functions.php:370
+msgid "More Plugins"
+msgstr "Más Plugins"
+
+#: includes/php-8.0-functions.php:56
+msgid "Switch vs Match"
+msgstr "Cambiar vs. Match"
+
+#: includes/php-8.0-functions.php:59
+#, php-format
+msgid "The switch statement is %s by %s seconds compared to match."
+msgstr ""
+"La declaración de cambio se compara %s por %s segundos con la coincidencia."
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/robertdevore/benchpress/"
+msgstr "https://github.com/robertdevore/benchpress/"
+
+#. Description of the plugin/theme
+msgid ""
+"A tool for benchmarking PHP code snippets and WordPress® queries to help "
+"developers optimize performance."
+msgstr ""
+"Una herramienta para evaluar fragmentos de código PHP y consultas de "
+"WordPress® para ayudar a los desarrolladores a optimizar el rendimiento."
+
+#. Author of the plugin/theme
+msgid "Robert DeVore"
+msgstr "Robert DeVore"
+
+#. Author URI of the plugin/theme
+msgid "https://robertdevore.com/"
+msgstr "https://robertdevore.com/"
