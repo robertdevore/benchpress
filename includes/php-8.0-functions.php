@@ -53,9 +53,9 @@ function benchpress_benchmark_switch_vs_match() {
     $faster_or_slower = $difference > 0 ? 'slower' : 'faster';
 
     return [
-        'name'          => esc_html__( 'Switch vs Match', 'benchpress' ),
-        'execution_time'=> round( abs( $difference ), 5 ),
-        'description'   => sprintf(
+        'name'           => esc_html__( 'Switch vs Match', 'benchpress' ),
+        'execution_time' => round( abs( $difference ), 5 ),
+        'description'    => sprintf(
             esc_html__( 'The switch statement is %s by %s seconds compared to match.', 'benchpress' ),
             $faster_or_slower,
             round( abs( $difference ), 5 )

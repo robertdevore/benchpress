@@ -241,7 +241,7 @@ function benchpress_render_settings_page() {
     if ( version_compare( PHP_VERSION, '8.0', '>=' ) ) {
         echo '<tr><th>' . esc_html__( 'Enable Switch vs Match Benchmark', 'benchpress' ) . '</th>';
         echo '<td><input type="checkbox" name="benchpress_enable_switch_vs_match" ' . checked( 1, $enable_switch_vs_match, false ) . ' /></td></tr>';
-    }    
+    }
     echo '<tr><th>' . esc_html__( 'Enable Transient vs Direct Query Benchmark', 'benchpress' ) . '</th>';
     echo '<td><input type="checkbox" name="benchpress_enable_transient_vs_query" ' . checked( 1, get_option( 'benchpress_enable_transient_vs_query', 1 ), false ) . ' /></td></tr>';
     echo '<tr><th>' . esc_html__( 'Enable Post Meta Access Benchmark', 'benchpress' ) . '</th>';
@@ -463,10 +463,9 @@ add_action( 'wp_ajax_benchpress_snapshot', 'benchpress_ajax_snapshot' );
  * This function verifies the AJAX nonce, deletes the specified snapshot 
  * from the database, and returns a success or error message based on the result.
  *
- * @since 1.0.0
- *
  * @global wpdb $wpdb WordPress database abstraction object.
  *
+ * @since  1.0.0
  * @return void
  */
 function benchpress_delete_snapshot() {

@@ -12,16 +12,16 @@
  * @return array Benchmark data for WP_Query by ID.
  */
 function benchpress_benchmark_wp_query_by_id() {
-    // Retrieve settings
-    $query_type   = get_option( 'benchpress_query_type', 'single' );
-    $post_id      = get_option( 'benchpress_post_id', [] );
-    $post_type    = get_option( 'benchpress_post_type', 'post' );
-    $post_count   = get_option( 'benchpress_post_count', 5 );
-    $taxonomy     = get_option( 'benchpress_taxonomy', '' );
-    $tax_terms    = get_option( 'benchpress_tax_terms', '' );
-    $orderby      = get_option( 'benchpress_orderby', 'date' );
-    $order        = get_option( 'benchpress_order', 'ASC' );
-    $iterations   = get_option( 'benchpress_query_iterations', 1 );
+    // Retrieve settings.
+    $query_type = get_option( 'benchpress_query_type', 'single' );
+    $post_id    = get_option( 'benchpress_post_id', [] );
+    $post_type  = get_option( 'benchpress_post_type', 'post' );
+    $post_count = get_option( 'benchpress_post_count', 5 );
+    $taxonomy   = get_option( 'benchpress_taxonomy', '' );
+    $tax_terms  = get_option( 'benchpress_tax_terms', '' );
+    $orderby    = get_option( 'benchpress_orderby', 'date' );
+    $order      = get_option( 'benchpress_order', 'ASC' );
+    $iterations = get_option( 'benchpress_query_iterations', 1 );
 
     $args = [
         'post_type'      => $post_type,
@@ -90,7 +90,7 @@ function benchpress_benchmark_wp_query_by_id() {
 /**
  * Benchmark Array Merge Methods.
  *
- * @since 1.0.0
+ * @since  1.0.0
  * @return array Benchmark data for array merge.
  */
 function benchpress_benchmark_array_merge() {
@@ -226,10 +226,10 @@ function benchpress_benchmark_transient_vs_direct_query() {
         $loop_count
     );
 
-    // Measure execution time for direct query..
+    // Measure execution time for direct query.
     $start_direct = microtime( true );
     $wpdb->get_results( $query );
-    $end_direct = microtime( true );
+    $end_direct        = microtime( true );
     $direct_query_time = $end_direct - $start_direct;
 
     // Measure execution time for transient caching.

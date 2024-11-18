@@ -16,6 +16,9 @@ class BenchPress_Snapshots_Table extends WP_List_Table {
 
     /**
      * Define columns for the Snapshots table.
+     * 
+     * @since  1.0.0
+     * @return array
      */
     public function get_columns() {
         return [
@@ -27,6 +30,9 @@ class BenchPress_Snapshots_Table extends WP_List_Table {
 
     /**
      * Define sortable columns.
+     * 
+     * @since  1.0.0
+     * @return array
      */
     public function get_sortable_columns() {
         return [
@@ -37,6 +43,9 @@ class BenchPress_Snapshots_Table extends WP_List_Table {
 
     /**
      * Prepare items for display in the Snapshots table.
+     * 
+     * @since  1.0.0
+     * @return void
      */
     public function prepare_items() {
         global $wpdb;
@@ -61,15 +70,18 @@ class BenchPress_Snapshots_Table extends WP_List_Table {
         );
 
         $total_items = $wpdb->get_var( "SELECT COUNT(id) FROM $table_name" );
-        $this->set_pagination_args([
+        $this->set_pagination_args( [
             'total_items' => $total_items,
             'per_page'    => $per_page,
             'total_pages' => ceil( $total_items / $per_page ),
-        ]);
+        ] );
     }
 
     /**
      * Default column renderer for displaying data.
+     * 
+     * @since  1.0.0
+     * @return mixed
      */
     protected function column_default( $item, $column_name ) {
         switch ( $column_name ) {

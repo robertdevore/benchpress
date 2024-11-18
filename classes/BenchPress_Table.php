@@ -23,7 +23,8 @@ class BenchPress_Table extends WP_List_Table {
 
     /**
      * Define table columns.
-     *
+     * 
+     * @since  1.0.0
      * @return array List of columns.
      */
     public function get_columns() {
@@ -36,6 +37,9 @@ class BenchPress_Table extends WP_List_Table {
 
     /**
      * Prepare items for the table.
+     * 
+     * @since  1.0.0
+     * @return void
      */
     public function prepare_items() {
         $benchmarks  = benchpress_run_all_benchmarks();
@@ -50,6 +54,8 @@ class BenchPress_Table extends WP_List_Table {
      *
      * @param array  $item        Item data.
      * @param string $column_name Column name.
+     * 
+     * @since  1.0.0
      * @return mixed Column output.
      */
     public function column_default( $item, $column_name ) {
@@ -60,6 +66,9 @@ class BenchPress_Table extends WP_List_Table {
      * Override the parent display_tablenav method to remove empty divs.
      *
      * @param string $which The position of the tablenav (top or bottom).
+     * 
+     * @since  1.0.0
+     * @return void
      */
     public function display_tablenav( $which ) {
         // Do nothing.
@@ -68,6 +77,8 @@ class BenchPress_Table extends WP_List_Table {
     /**
      * Override the parent get_bulk_actions method to remove bulk actions.
      *
+     * 
+     * @since  1.0.0
      * @return array An empty array of bulk actions.
      */
     public function get_bulk_actions() {
@@ -77,6 +88,8 @@ class BenchPress_Table extends WP_List_Table {
     /**
      * Override pagination to prevent showing pagination controls.
      *
+     * 
+     * @since  1.0.0
      * @return void
      */
     public function pagination( $which ) {
