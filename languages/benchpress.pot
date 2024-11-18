@@ -2,15 +2,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BenchPress\n"
-"POT-Creation-Date: 2024-11-12 01:25-0500\n"
-"PO-Revision-Date: 2024-11-12 01:25-0500\n"
+"POT-Creation-Date: 2024-11-17 23:36-0500\n"
+"PO-Revision-Date: 2024-11-17 23:36-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.5\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: benchpress.php\n"
@@ -22,206 +22,175 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: vendor\n"
 
+#: benchpress.php:50 benchpress.php:131 benchpress.php:132
+msgid "Settings"
+msgstr ""
+
 #. Plugin Name of the plugin/theme
-#: benchpress.php:90 benchpress.php:91 benchpress.php:166
+#: benchpress.php:111 benchpress.php:112 benchpress.php:185
+#: includes/helper-functions.php:364
 msgid "BenchPress"
 msgstr ""
 
-#: benchpress.php:101 benchpress.php:102
+#: benchpress.php:122 benchpress.php:123
 #: classes/BenchPress_Snapshots_Table.php:12
 msgid "Snapshots"
 msgstr ""
 
-#: benchpress.php:110 benchpress.php:111
-msgid "Settings"
+#: benchpress.php:152 benchpress.php:239 includes/helper-functions.php:356
+msgid "BenchPress Settings"
 msgstr ""
 
-#: benchpress.php:130
-msgid "BenchPress Snapshots"
-msgstr ""
-
-#: benchpress.php:131
-msgid "Clear Snapshots"
-msgstr ""
-
-#: benchpress.php:132
-msgid "Download Snapshots"
-msgstr ""
-
-#: benchpress.php:134 benchpress.php:171 benchpress.php:229
-msgid "Documentation"
-msgstr ""
-
-#: benchpress.php:134 benchpress.php:171 benchpress.php:226
-msgid "Support"
-msgstr ""
-
-#: benchpress.php:134 benchpress.php:171
-msgid "More Plugins"
-msgstr ""
-
-#: benchpress.php:145
+#: benchpress.php:163
 msgid "Snapshot Data"
 msgstr ""
 
-#: benchpress.php:167
-msgid "Save Snapshot"
-msgstr ""
-
-#: benchpress.php:168
-msgid "Refresh Tests"
-msgstr ""
-
-#: benchpress.php:177
+#: benchpress.php:191
 #, php-format
 msgid "Total Execution Time: %s seconds"
 msgstr ""
 
-#: benchpress.php:224
-msgid "BenchPress Settings"
-msgstr ""
-
-#: benchpress.php:236
+#: benchpress.php:244
 msgid "Benchmark Options"
 msgstr ""
 
-#: benchpress.php:238
+#: benchpress.php:246
 msgid "Loop Count for Benchmarks"
 msgstr ""
 
-#: benchpress.php:242
+#: benchpress.php:250
 msgid "Enable Switch vs Match Benchmark"
 msgstr ""
 
-#: benchpress.php:245
+#: benchpress.php:253
 msgid "Enable Transient vs Direct Query Benchmark"
 msgstr ""
 
-#: benchpress.php:247
+#: benchpress.php:255
 msgid "Enable Post Meta Access Benchmark"
 msgstr ""
 
-#: benchpress.php:253
+#: benchpress.php:261
 msgid "WP_Query Settings"
 msgstr ""
 
-#: benchpress.php:257
+#: benchpress.php:265
 msgid "Query Type"
 msgstr ""
 
-#: benchpress.php:260
+#: benchpress.php:268
 msgid "Single Post"
 msgstr ""
 
-#: benchpress.php:261
+#: benchpress.php:269
 msgid "Multiple Posts"
 msgstr ""
 
-#: benchpress.php:268
+#: benchpress.php:276
 msgid "Single Post Query"
 msgstr ""
 
-#: benchpress.php:270
+#: benchpress.php:278
 msgid "Post ID"
 msgstr ""
 
-#: benchpress.php:277
+#: benchpress.php:285
 msgid "Multiple Post Query"
 msgstr ""
 
-#: benchpress.php:281
+#: benchpress.php:289
 msgid "Post Type"
 msgstr ""
 
-#: benchpress.php:294
+#: benchpress.php:302
 msgid "Number of Posts"
 msgstr ""
 
-#: benchpress.php:298
+#: benchpress.php:306
 msgid "Taxonomy"
 msgstr ""
 
-#: benchpress.php:300
+#: benchpress.php:308
 msgid "Select Taxonomy"
 msgstr ""
 
-#: benchpress.php:312
+#: benchpress.php:320
 msgid "Terms (comma-separated)"
 msgstr ""
 
-#: benchpress.php:316
+#: benchpress.php:324
 msgid "Order By"
 msgstr ""
 
-#: benchpress.php:319 classes/BenchPress_Snapshots_Table.php:23
+#: benchpress.php:327 classes/BenchPress_Snapshots_Table.php:26
 msgid "Date"
 msgstr ""
 
-#: benchpress.php:320
+#: benchpress.php:328
 msgid "Title"
 msgstr ""
 
-#: benchpress.php:321 classes/BenchPress_Snapshots_Table.php:22
+#: benchpress.php:329 classes/BenchPress_Snapshots_Table.php:25
 msgid "ID"
 msgstr ""
 
-#: benchpress.php:322
+#: benchpress.php:330
 msgid "Name"
 msgstr ""
 
-#: benchpress.php:323
+#: benchpress.php:331
 msgid "Author"
 msgstr ""
 
-#: benchpress.php:324
+#: benchpress.php:332
 msgid "Modified"
 msgstr ""
 
-#: benchpress.php:325
+#: benchpress.php:333
 msgid "Random"
 msgstr ""
 
-#: benchpress.php:337
+#: benchpress.php:345
 msgid "Order"
 msgstr ""
 
-#: benchpress.php:340
+#: benchpress.php:348
 msgid "Ascending"
 msgstr ""
 
-#: benchpress.php:341
+#: benchpress.php:349
 msgid "Descending"
 msgstr ""
 
-#: benchpress.php:347
+#: benchpress.php:355
 msgid "Save Settings"
 msgstr ""
 
-#: benchpress.php:447
+#: benchpress.php:464
 msgid "Snapshot saved!"
 msgstr ""
 
-#: benchpress.php:475
+#: benchpress.php:491
 msgid "Snapshot deleted successfully."
 msgstr ""
 
-#: benchpress.php:477
+#: benchpress.php:493
 msgid "Failed to delete snapshot."
 msgstr ""
 
-#: benchpress.php:480
+#: benchpress.php:496
 msgid "Invalid snapshot ID."
 msgstr ""
 
-#: benchpress.php:506
+#: benchpress.php:522
 msgid "All snapshots deleted successfully."
 msgstr ""
 
-#: benchpress.php:508
+#: benchpress.php:524
 msgid "Failed to delete snapshots."
 msgstr ""
 
-#: benchpress.php:534
+#: benchpress.php:550
 msgid "No snapshots available to download."
 msgstr ""
 
@@ -229,15 +198,15 @@ msgstr ""
 msgid "Snapshot"
 msgstr ""
 
-#: classes/BenchPress_Snapshots_Table.php:24
+#: classes/BenchPress_Snapshots_Table.php:27
 msgid "Actions"
 msgstr ""
 
-#: classes/BenchPress_Snapshots_Table.php:88
+#: classes/BenchPress_Snapshots_Table.php:100
 msgid "View Data"
 msgstr ""
 
-#: classes/BenchPress_Snapshots_Table.php:90
+#: classes/BenchPress_Snapshots_Table.php:102
 msgid "Delete Snapshot"
 msgstr ""
 
@@ -249,15 +218,15 @@ msgstr ""
 msgid "Benchmarks"
 msgstr ""
 
-#: classes/BenchPress_Table.php:31
+#: classes/BenchPress_Table.php:32
 msgid "Benchmark Name"
 msgstr ""
 
-#: classes/BenchPress_Table.php:32
+#: classes/BenchPress_Table.php:33
 msgid "Execution Time (s)"
 msgstr ""
 
-#: classes/BenchPress_Table.php:33
+#: classes/BenchPress_Table.php:34
 msgid "Description"
 msgstr ""
 
@@ -330,6 +299,38 @@ msgstr ""
 
 #: includes/helper-functions.php:334
 msgid "get_post_meta() vs WP_Meta_Query"
+msgstr ""
+
+#: includes/helper-functions.php:352
+msgid "BenchPress Snapshots"
+msgstr ""
+
+#: includes/helper-functions.php:353
+msgid "Clear Snapshots"
+msgstr ""
+
+#: includes/helper-functions.php:354
+msgid "Download Snapshots"
+msgstr ""
+
+#: includes/helper-functions.php:358 includes/helper-functions.php:370
+msgid "Support"
+msgstr ""
+
+#: includes/helper-functions.php:361 includes/helper-functions.php:370
+msgid "Documentation"
+msgstr ""
+
+#: includes/helper-functions.php:365
+msgid "Save Snapshot"
+msgstr ""
+
+#: includes/helper-functions.php:366
+msgid "Refresh Tests"
+msgstr ""
+
+#: includes/helper-functions.php:370
+msgid "More Plugins"
 msgstr ""
 
 #: includes/php-8.0-functions.php:56
