@@ -34,6 +34,27 @@ $benchpress_start_time = microtime( true );
 define( 'BENCHPRESS_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'BENCHPRESS_VERSION', '1.0.2' );
 
+// Create variable for settings link filter.
+$plugin_name = plugin_basename( __FILE__ );
+
+/**
+ * Add settings link on plugin page
+ *
+ * @param array $links an array of links related to the plugin.
+ * 
+ * @since  1.1.0
+ * @return array updatead array of links related to the plugin.
+ */
+function benchpress_settings_link( $links ) {
+    // Settings link.
+    $settings_link = '<a href="admin.php?page=benchpress">' . esc_html__( 'Settings', 'benchpress' ) . '</a>';
+    // Add the settings link to the $links array.
+    array_unshift( $links, $settings_link );
+
+    return $links;
+}
+add_filter( "plugin_action_links_$plugin_name", 'benchpress_settings_link' );
+
 // Add the Plugin Update Checker.
 require 'vendor/plugin-update-checker/plugin-update-checker.php';
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
