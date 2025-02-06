@@ -78,6 +78,21 @@ use RobertDevore\WPComCheck\WPComPluginHandler;
 new WPComPluginHandler( plugin_basename( __FILE__ ), 'https://robertdevore.com/why-this-plugin-doesnt-support-wordpress-com-hosting/' );
 
 /**
+ * Load plugin text domain for translations
+ * 
+ * @since  1.2.0
+ * @return void
+ */
+function benchpress_load_textdomain() {
+    load_plugin_textdomain( 
+        'customer-loyalty-for-woocommerce',
+        false,
+        dirname( plugin_basename( __FILE__ ) ) . '/languages/'
+    );
+}
+add_action( 'plugins_loaded', 'benchpress_load_textdomain' );
+
+/**
  * Summary of benchpress_create_snapshots_table
  * 
  * @since  1.0.0
