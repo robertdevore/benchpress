@@ -1,0 +1,377 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: BenchPress\n"
+"POT-Creation-Date: 2025-02-06 03:25-0500\n"
+"PO-Revision-Date: 2025-02-06 03:27-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: af\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.5\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: benchpress.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Poedit-SearchPathExcluded-1: vendor\n"
+
+#: admin/ajax.php:62
+msgid "Snapshot saved!"
+msgstr "Snapshot gestoor!"
+
+#: admin/ajax.php:89
+msgid "Snapshot deleted successfully."
+msgstr "Snapshot is suksesvol uitgevee."
+
+#: admin/ajax.php:91
+msgid "Failed to delete snapshot."
+msgstr "Kon nie momentopname uitvee nie."
+
+#: admin/ajax.php:94
+msgid "Invalid snapshot ID."
+msgstr "Ongeldige momentopname-ID."
+
+#: admin/ajax.php:120
+msgid "All snapshots deleted successfully."
+msgstr "Alle foto's is suksesvol uitgevee."
+
+#: admin/ajax.php:122
+msgid "Failed to delete snapshots."
+msgstr "Kon nie foto's uitvee nie."
+
+#: admin/ajax.php:148
+msgid "No snapshots available to download."
+msgstr "Geen kiekies beskikbaar om af te laai nie."
+
+#. Plugin Name of the plugin/theme
+#: admin/settings.php:16 admin/settings.php:17 admin/settings.php:90
+#: includes/helper-functions.php:364
+msgid "BenchPress"
+msgstr "BenchPress"
+
+#: admin/settings.php:27 admin/settings.php:28
+#: classes/BenchPress_Snapshots_Table.php:12
+msgid "Snapshots"
+msgstr "Foto's"
+
+#: admin/settings.php:36 admin/settings.php:37 benchpress.php:50
+msgid "Settings"
+msgstr "Vertellings"
+
+#: admin/settings.php:57 admin/settings.php:144
+#: includes/helper-functions.php:356
+msgid "BenchPress Settings"
+msgstr "BenchPress-instellings"
+
+#: admin/settings.php:68
+msgid "Snapshot Data"
+msgstr "Snapshot Data"
+
+#: admin/settings.php:96
+#, php-format
+msgid "Total Execution Time: %s seconds"
+msgstr "Totale uitvoeringstyd: %s sekondes"
+
+#: admin/settings.php:149
+msgid "Benchmark Options"
+msgstr "Benchmark Opsies"
+
+#: admin/settings.php:151
+msgid "Loop Count for Benchmarks"
+msgstr "Looptelling vir maatstawwe"
+
+#: admin/settings.php:155
+msgid "Enable Switch vs Match Benchmark"
+msgstr "Aktiveer Switch vs Match Benchmark"
+
+#: admin/settings.php:158
+msgid "Enable Transient vs Direct Query Benchmark"
+msgstr "Aktiveer Transient vs Direct Query Benchmark"
+
+#: admin/settings.php:160
+msgid "Enable Post Meta Access Benchmark"
+msgstr "Aktiveer Post Meta Access Benchmark"
+
+#: admin/settings.php:166
+msgid "WP_Query Settings"
+msgstr "WP_Query-instellings"
+
+#: admin/settings.php:170
+msgid "Query Type"
+msgstr "Soort navraag"
+
+#: admin/settings.php:173
+msgid "Single Post"
+msgstr "Enkelpos"
+
+#: admin/settings.php:174
+msgid "Multiple Posts"
+msgstr "Veelvuldige plasings"
+
+#: admin/settings.php:181
+msgid "Single Post Query"
+msgstr "Enkelpos-navraag"
+
+#: admin/settings.php:183
+msgid "Post ID"
+msgstr "Miniblad ID"
+
+#: admin/settings.php:190
+msgid "Multiple Post Query"
+msgstr "Meervoudige plasingsnavraag"
+
+#: admin/settings.php:194
+msgid "Post Type"
+msgstr "Artikel Tipe"
+
+#: admin/settings.php:207
+msgid "Number of Posts"
+msgstr "Aantal Arikels"
+
+#: admin/settings.php:211
+msgid "Taxonomy"
+msgstr "Taksonomie"
+
+#: admin/settings.php:213
+msgid "Select Taxonomy"
+msgstr "Kies Taksonomie"
+
+#: admin/settings.php:225
+msgid "Terms (comma-separated)"
+msgstr "Bepalings (kommageskei)"
+
+#: admin/settings.php:229
+msgid "Order By"
+msgstr "Bestel by"
+
+#: admin/settings.php:232 classes/BenchPress_Snapshots_Table.php:26
+msgid "Date"
+msgstr "Datum"
+
+#: admin/settings.php:233
+msgid "Title"
+msgstr "Titel"
+
+#: admin/settings.php:234 classes/BenchPress_Snapshots_Table.php:25
+msgid "ID"
+msgstr "ID"
+
+#: admin/settings.php:235
+msgid "Name"
+msgstr "Naam"
+
+#: admin/settings.php:236
+msgid "Author"
+msgstr "Skrywer"
+
+#: admin/settings.php:237
+msgid "Modified"
+msgstr "Gewysig"
+
+#: admin/settings.php:238
+msgid "Random"
+msgstr "Willekeurig"
+
+#: admin/settings.php:250
+msgid "Order"
+msgstr "Stuur aansoek"
+
+#: admin/settings.php:253
+msgid "Ascending"
+msgstr "Stygend"
+
+#: admin/settings.php:254
+msgid "Descending"
+msgstr "Dalend"
+
+#: admin/settings.php:260
+msgid "Save Settings"
+msgstr "Stoor Instellings"
+
+#: classes/BenchPress_Snapshots_Table.php:11
+msgid "Snapshot"
+msgstr "Snapshot"
+
+#: classes/BenchPress_Snapshots_Table.php:27
+msgid "Actions"
+msgstr "Aksies"
+
+#: classes/BenchPress_Snapshots_Table.php:100
+msgid "View Data"
+msgstr "Bekyk data"
+
+#: classes/BenchPress_Snapshots_Table.php:102
+msgid "Delete Snapshot"
+msgstr "Vee Snapshot uit"
+
+#: classes/BenchPress_Table.php:18
+msgid "Benchmark"
+msgstr "Maatstaf"
+
+#: classes/BenchPress_Table.php:19
+msgid "Benchmarks"
+msgstr "Maatstawwe"
+
+#: classes/BenchPress_Table.php:32
+msgid "Benchmark Name"
+msgstr "Benchmark Naam"
+
+#: classes/BenchPress_Table.php:33
+msgid "Execution Time (s)"
+msgstr "Uitvoering tyd (s)"
+
+#: classes/BenchPress_Table.php:34
+msgid "Description"
+msgstr "Beskrywing"
+
+#: includes/helper-functions.php:63
+#, php-format
+msgid ""
+"Time to execute WP_Query by post ID %d, post type %s, ordering by %s (%s), "
+"averaged over %d iteration(s)."
+msgstr ""
+"Tyd om WP_Query uit te voer deur pos-ID %d, postipe %s, gerangskik volgens "
+"%s (%s), gemiddeld oor %d iterasie(s)."
+
+#: includes/helper-functions.php:72
+#, php-format
+msgid ""
+"Time to execute WP_Query for %d posts of post type %s, ordering by %s (%s), "
+"with taxonomy (%s) and terms (%s), averaged over %d iteration(s)."
+msgstr ""
+"Tyd om WP_Query uit te voer vir %d plasings van plasingstipe %s, gerangskik "
+"volgens %s (%s), met taksonomie (%s) en terme (%s), gemiddeld oor %d "
+"iterasie(s)."
+
+#: includes/helper-functions.php:77 includes/helper-functions.php:78
+msgid "none"
+msgstr "geen"
+
+#: includes/helper-functions.php:84
+msgid "WP_Query Benchmark"
+msgstr "WP_Query Benchmark"
+
+#: includes/helper-functions.php:124
+msgid "Array Merge vs Union"
+msgstr "Array Merge vs Union"
+
+#: includes/helper-functions.php:127
+#, php-format
+msgid ""
+"Comparing array_merge and array union (+). The array_merge is %s by %s "
+"seconds on average over %d iterations."
+msgstr ""
+"Vergelyk array_merge en array union (+). Die array_merge is gemiddeld %s by "
+"%s sekondes oor %d iterasies."
+
+#: includes/helper-functions.php:168
+msgid "Dot Operator vs sprintf"
+msgstr "Puntoperateur vs sprintf"
+
+#: includes/helper-functions.php:171
+#, php-format
+msgid ""
+"Comparing dot operator (.) and sprintf for string concatenation. The dot "
+"operator is %s by %s seconds on average over %d iterations."
+msgstr ""
+"Vergelyk puntoperateur (.) en sprintf vir string aaneenskakeling. Die "
+"puntoperateur is gemiddeld %s by %s sekondes oor %d iterasies."
+
+#: includes/helper-functions.php:251
+msgid "Transient Caching vs Direct Query"
+msgstr "Verbygaande caching vs direkte navraag"
+
+#: includes/helper-functions.php:254
+#, php-format
+msgid "Direct query is %s by %s seconds compared to transient caching."
+msgstr ""
+"Direkte navraag is %s by %s sekondes in vergelyking met verbygaande kas."
+
+#: includes/helper-functions.php:321
+#, php-format
+msgid ""
+"Retrieving post meta for post ID %d using get_post_meta is %s by %s seconds "
+"compared to WP_Meta_Query."
+msgstr ""
+"Die herwinning van plasingsmeta vir plasing-ID %d deur gebruik te maak van "
+"get_post_meta is %s by %s sekondes in vergelyking met WP_Meta_Query."
+
+#: includes/helper-functions.php:327
+#, php-format
+msgid ""
+"Retrieving post meta for %d posts using get_post_meta is %s by %s seconds "
+"compared to WP_Meta_Query."
+msgstr ""
+"Die herwinning van plasingsmeta vir %d plasings met get_post_meta is %s by "
+"%s sekondes in vergelyking met WP_Meta_Query."
+
+#: includes/helper-functions.php:334
+msgid "get_post_meta() vs WP_Meta_Query"
+msgstr "get_post_meta() vs WP_Meta_Query"
+
+#: includes/helper-functions.php:352
+msgid "BenchPress Snapshots"
+msgstr "BenchPress-kiekies"
+
+#: includes/helper-functions.php:353
+msgid "Clear Snapshots"
+msgstr "Maak kiekies skoon"
+
+#: includes/helper-functions.php:354
+msgid "Download Snapshots"
+msgstr "Laai Snapshots af"
+
+#: includes/helper-functions.php:358 includes/helper-functions.php:370
+msgid "Support"
+msgstr "Hulp"
+
+#: includes/helper-functions.php:361 includes/helper-functions.php:370
+msgid "Documentation"
+msgstr "Dokumentasie"
+
+#: includes/helper-functions.php:365
+msgid "Save Snapshot"
+msgstr "Stoor Snapshot"
+
+#: includes/helper-functions.php:366
+msgid "Refresh Tests"
+msgstr "Herlaai toetse"
+
+#: includes/helper-functions.php:370
+msgid "More Plugins"
+msgstr "Meer inproppe"
+
+#: includes/php-8.0-functions.php:56
+msgid "Switch vs Match"
+msgstr "Switch vs Match"
+
+#: includes/php-8.0-functions.php:59
+#, php-format
+msgid "The switch statement is %s by %s seconds compared to match."
+msgstr "Die skakelstelling is %s by %s sekondes in vergelyking met passing."
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/robertdevore/benchpress/"
+msgstr "https://github.com/robertdevore/benchpress/"
+
+#. Description of the plugin/theme
+msgid ""
+"A tool for benchmarking PHP code snippets and WordPress® queries to help "
+"developers optimize performance."
+msgstr ""
+"'n Hulpmiddel om PHP-kodebrokkies en WordPress®-navrae te meet om "
+"ontwikkelaars te help om werkverrigting te optimaliseer."
+
+#. Author of the plugin/theme
+msgid "Robert DeVore"
+msgstr "Robert DeVore"
+
+#. Author URI of the plugin/theme
+msgid "https://robertdevore.com/"
+msgstr "https://robertdevore.com/"
