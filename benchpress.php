@@ -119,8 +119,9 @@ register_activation_hook( __FILE__, 'benchpress_create_snapshots_table' );
 require_once BENCHPRESS_PLUGIN_DIR . 'classes/BenchPress_Table.php';
 require_once BENCHPRESS_PLUGIN_DIR . 'classes/BenchPress_Snapshots_Table.php';
 require_once BENCHPRESS_PLUGIN_DIR . 'includes/helper-functions.php';
-require_once BENCHPRESS_PLUGIN_DIR . 'admin/settings.php';
+require_once BENCHPRESS_PLUGIN_DIR . 'admin/enqueue.php';
 require_once BENCHPRESS_PLUGIN_DIR . 'admin/ajax.php';
+require_once BENCHPRESS_PLUGIN_DIR . 'admin/settings.php';
 
 // Include PHP 8-specific functions if the server's PHP version is 8.0 or above.
 if ( version_compare( PHP_VERSION, '8.0', '>=' ) ) {
