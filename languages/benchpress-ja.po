@@ -1,0 +1,384 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: BenchPress\n"
+"POT-Creation-Date: 2025-02-06 03:28-0500\n"
+"PO-Revision-Date: 2025-02-06 03:33-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.5\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: benchpress.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Poedit-SearchPathExcluded-1: vendor\n"
+
+#: admin/ajax.php:62
+msgid "Snapshot saved!"
+msgstr "スナップショットを保存！"
+
+#: admin/ajax.php:89
+msgid "Snapshot deleted successfully."
+msgstr "スナップショットは正常に削除されました。"
+
+#: admin/ajax.php:91
+msgid "Failed to delete snapshot."
+msgstr "スナップショットの削除に失敗しました。"
+
+#: admin/ajax.php:94
+msgid "Invalid snapshot ID."
+msgstr "スナップショットIDが無効です。"
+
+#: admin/ajax.php:120
+msgid "All snapshots deleted successfully."
+msgstr "すべてのスナップショットが正常に削除されました。"
+
+#: admin/ajax.php:122
+msgid "Failed to delete snapshots."
+msgstr "スナップショットの削除に失敗しました。"
+
+#: admin/ajax.php:148
+msgid "No snapshots available to download."
+msgstr "ダウンロード可能なスナップショットはありません。"
+
+#. Plugin Name of the plugin/theme
+#: admin/settings.php:16 admin/settings.php:17 admin/settings.php:90
+#: includes/helper-functions.php:364
+msgid "BenchPress"
+msgstr "ベンチプレス"
+
+#: admin/settings.php:27 admin/settings.php:28
+#: classes/BenchPress_Snapshots_Table.php:12
+msgid "Snapshots"
+msgstr "スナップ写真"
+
+#: admin/settings.php:36 admin/settings.php:37 benchpress.php:50
+msgid "Settings"
+msgstr "設定"
+
+#: admin/settings.php:57 admin/settings.php:144
+#: includes/helper-functions.php:356
+msgid "BenchPress Settings"
+msgstr "ベンチプレスの設定"
+
+#: admin/settings.php:68
+msgid "Snapshot Data"
+msgstr "スナップショット・データ"
+
+#: admin/settings.php:96
+#, php-format
+msgid "Total Execution Time: %s seconds"
+msgstr "合計実行時間： %s秒"
+
+#: admin/settings.php:149
+msgid "Benchmark Options"
+msgstr "ベンチマーク・オプション"
+
+#: admin/settings.php:151
+msgid "Loop Count for Benchmarks"
+msgstr "ベンチマークのループ回数"
+
+#: admin/settings.php:155
+msgid "Enable Switch vs Match Benchmark"
+msgstr "イネーブル・スイッチ対マッチ・ベンチマーク"
+
+#: admin/settings.php:158
+msgid "Enable Transient vs Direct Query Benchmark"
+msgstr ""
+"トランジェント・ベンチマークとダイレクト・クエリー・ベンチマークの比較"
+
+#: admin/settings.php:160
+msgid "Enable Post Meta Access Benchmark"
+msgstr "ポスト・メタ・アクセス・ベンチマークを有効にする"
+
+#: admin/settings.php:166
+msgid "WP_Query Settings"
+msgstr "WP_Query 設定"
+
+#: admin/settings.php:170
+msgid "Query Type"
+msgstr "クエリータイプ"
+
+#: admin/settings.php:173
+msgid "Single Post"
+msgstr "記事ページ"
+
+#: admin/settings.php:174
+msgid "Multiple Posts"
+msgstr "複数の投稿"
+
+#: admin/settings.php:181
+msgid "Single Post Query"
+msgstr "単一投稿クエリ"
+
+#: admin/settings.php:183
+msgid "Post ID"
+msgstr "投稿 ID"
+
+#: admin/settings.php:190
+msgid "Multiple Post Query"
+msgstr "複数投稿クエリ"
+
+#: admin/settings.php:194
+msgid "Post Type"
+msgstr "投稿タイプ"
+
+#: admin/settings.php:207
+msgid "Number of Posts"
+msgstr "投稿数"
+
+#: admin/settings.php:211
+msgid "Taxonomy"
+msgstr "タクソノミー（分類）"
+
+#: admin/settings.php:213
+msgid "Select Taxonomy"
+msgstr "分類（タクソノミー）を選択"
+
+#: admin/settings.php:225
+msgid "Terms (comma-separated)"
+msgstr "用語（カンマ区切り）"
+
+#: admin/settings.php:229
+msgid "Order By"
+msgstr "並び順"
+
+#: admin/settings.php:232 classes/BenchPress_Snapshots_Table.php:26
+msgid "Date"
+msgstr "日付"
+
+#: admin/settings.php:233
+msgid "Title"
+msgstr "タイトル"
+
+#: admin/settings.php:234 classes/BenchPress_Snapshots_Table.php:25
+msgid "ID"
+msgstr "ID"
+
+#: admin/settings.php:235
+msgid "Name"
+msgstr "名前"
+
+#: admin/settings.php:236
+msgid "Author"
+msgstr "投稿者"
+
+#: admin/settings.php:237
+msgid "Modified"
+msgstr "更新日"
+
+#: admin/settings.php:238
+msgid "Random"
+msgstr "ランダム"
+
+#: admin/settings.php:250
+msgid "Order"
+msgstr "注文"
+
+#: admin/settings.php:253
+msgid "Ascending"
+msgstr "昇順"
+
+#: admin/settings.php:254
+msgid "Descending"
+msgstr "降順"
+
+#: admin/settings.php:260
+msgid "Save Settings"
+msgstr "設定を保存"
+
+#: classes/BenchPress_Snapshots_Table.php:11
+msgid "Snapshot"
+msgstr "スナップショット"
+
+#: classes/BenchPress_Snapshots_Table.php:27
+msgid "Actions"
+msgstr "アクション"
+
+#: classes/BenchPress_Snapshots_Table.php:100
+msgid "View Data"
+msgstr "データを見る"
+
+#: classes/BenchPress_Snapshots_Table.php:102
+msgid "Delete Snapshot"
+msgstr "スナップショットの削除"
+
+#: classes/BenchPress_Table.php:18
+msgid "Benchmark"
+msgstr "ベンチマーク"
+
+#: classes/BenchPress_Table.php:19
+msgid "Benchmarks"
+msgstr "ベンチマーク"
+
+#: classes/BenchPress_Table.php:32
+msgid "Benchmark Name"
+msgstr "ベンチマーク名"
+
+#: classes/BenchPress_Table.php:33
+msgid "Execution Time (s)"
+msgstr "実行時間 (s)"
+
+#: classes/BenchPress_Table.php:34
+msgid "Description"
+msgstr "説明"
+
+#: includes/helper-functions.php:63
+#, php-format
+msgid ""
+"Time to execute WP_Query by post ID %d, post type %s, ordering by %s (%s), "
+"averaged over %d iteration(s)."
+msgstr ""
+"投稿 ID %d、投稿タイプ %s、順序 %s (%s) で WP_Query を実行するのにかかる時"
+"間 (%d 回の反復で平均)。"
+
+#: includes/helper-functions.php:72
+#, php-format
+msgid ""
+"Time to execute WP_Query for %d posts of post type %s, ordering by %s (%s), "
+"with taxonomy (%s) and terms (%s), averaged over %d iteration(s)."
+msgstr ""
+"Time to execute WP_Query for %d posts of post type %s, ordering by %s (%s), "
+"with taxonomy (%s) and terms (%s), averaged over %d iteration(s)."
+
+#: includes/helper-functions.php:77 includes/helper-functions.php:78
+msgid "none"
+msgstr "該当なし"
+
+#: includes/helper-functions.php:84
+msgid "WP_Query Benchmark"
+msgstr "WP_Queryベンチマーク"
+
+#: includes/helper-functions.php:124
+msgid "Array Merge vs Union"
+msgstr "アレイのマージとユニオンの比較"
+
+#: includes/helper-functions.php:127
+#, php-format
+msgid ""
+"Comparing array_merge and array union (+). The array_merge is %s by %s "
+"seconds on average over %d iterations."
+msgstr ""
+"Comparing array_merge and array union (+). The array_merge is %s by %s "
+"seconds on average over %d iterations."
+
+#: includes/helper-functions.php:168
+msgid "Dot Operator vs sprintf"
+msgstr "ドット演算子 vs sprintf"
+
+#: includes/helper-functions.php:171
+#, php-format
+msgid ""
+"Comparing dot operator (.) and sprintf for string concatenation. The dot "
+"operator is %s by %s seconds on average over %d iterations."
+msgstr ""
+"Comparing dot operator (.) and sprintf for string concatenation. The dot "
+"operator is %s by %s seconds on average over %d iterations."
+
+#: includes/helper-functions.php:251
+msgid "Transient Caching vs Direct Query"
+msgstr "トランジェント・キャッシングとダイレクト・クエリーの比較"
+
+#: includes/helper-functions.php:254
+#, php-format
+msgid "Direct query is %s by %s seconds compared to transient caching."
+msgstr ""
+"トランジェント・キャッシングに比べ、ダイレクト・クエリーは%s×%s秒である。"
+
+#: includes/helper-functions.php:321
+#, php-format
+msgid ""
+"Retrieving post meta for post ID %d using get_post_meta is %s by %s seconds "
+"compared to WP_Meta_Query."
+msgstr ""
+"get_post_metaを使用して投稿ID %dの投稿メタを取得する場合、WP_Meta_Queryと比"
+"較して%s秒から%s秒かかります。"
+
+#: includes/helper-functions.php:327
+#, php-format
+msgid ""
+"Retrieving post meta for %d posts using get_post_meta is %s by %s seconds "
+"compared to WP_Meta_Query."
+msgstr ""
+"get_post_metaを使用して%d件の投稿のメタ情報を取得する場合、WP_Meta_Queryと比"
+"較して%s秒から%s秒短縮されます。"
+
+#: includes/helper-functions.php:334
+msgid "get_post_meta() vs WP_Meta_Query"
+msgstr "get_post_meta() vs WP_Meta_Query"
+
+#: includes/helper-functions.php:352
+msgid "BenchPress Snapshots"
+msgstr "ベンチプレス・スナップショット"
+
+#: includes/helper-functions.php:353
+msgid "Clear Snapshots"
+msgstr "クリア・スナップショット"
+
+#: includes/helper-functions.php:354
+#, fuzzy
+msgid "Download Snapshots"
+msgstr "スナップショットをダウンロード"
+
+#: includes/helper-functions.php:358 includes/helper-functions.php:370
+msgid "Support"
+msgstr "サポート"
+
+#: includes/helper-functions.php:361 includes/helper-functions.php:370
+msgid "Documentation"
+msgstr "ドキュメント"
+
+#: includes/helper-functions.php:365
+msgid "Save Snapshot"
+msgstr "スナップショットの保存"
+
+#: includes/helper-functions.php:366
+#, fuzzy
+msgid "Refresh Tests"
+msgstr "リフレッシュテスト"
+
+#: includes/helper-functions.php:370
+msgid "More Plugins"
+msgstr "その他のプラグイン"
+
+#: includes/php-8.0-functions.php:56
+#, fuzzy
+msgid "Switch vs Match"
+msgstr "スイッチ vs マッチ"
+
+#: includes/php-8.0-functions.php:59
+#, fuzzy, php-format
+msgid "The switch statement is %s by %s seconds compared to match."
+msgstr "switch文はmatchと比べて%s×%s秒である。"
+
+#. Plugin URI of the plugin/theme
+#, fuzzy
+msgid "https://github.com/robertdevore/benchpress/"
+msgstr "https://github.com/robertdevore/benchpress/"
+
+#. Description of the plugin/theme
+#, fuzzy
+msgid ""
+"A tool for benchmarking PHP code snippets and WordPress® queries to help "
+"developers optimize performance."
+msgstr ""
+"PHP コードスニペットと WordPress® クエリをベンチマークするツールで、開発者が"
+"パフォーマンスを最適化するのに役立ちます。"
+
+#. Author of the plugin/theme
+#, fuzzy
+msgid "Robert DeVore"
+msgstr "ロバート・デヴォア"
+
+#. Author URI of the plugin/theme
+#, fuzzy
+msgid "https://robertdevore.com/"
+msgstr "https://robertdevore.com/"
