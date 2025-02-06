@@ -92,30 +92,8 @@ function benchpress_load_textdomain() {
 }
 add_action( 'plugins_loaded', 'benchpress_load_textdomain' );
 
-/**
- * Summary of benchpress_create_snapshots_table
- * 
- * @since  1.0.0
- * @return void
- */
-function benchpress_create_snapshots_table() {
-    global $wpdb;
-    $table_name      = $wpdb->prefix . 'benchpress_snapshots';
-    $charset_collate = $wpdb->get_charset_collate();
-
-    $sql = "CREATE TABLE $table_name (
-        id mediumint(9) NOT NULL AUTO_INCREMENT,
-        snapshot_data longtext NOT NULL,
-        created_at datetime DEFAULT CURRENT_TIMESTAMP NOT NULL,
-        PRIMARY KEY  (id)
-    ) $charset_collate;";
-
-    require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
-    dbDelta( $sql );
-}
-register_activation_hook( __FILE__, 'benchpress_create_snapshots_table' );
-
 // Include necessary files.
+require_once BENCHPRESS_PLUGIN_DIR . 'admin/db-table.php';
 require_once BENCHPRESS_PLUGIN_DIR . 'classes/BenchPress_Table.php';
 require_once BENCHPRESS_PLUGIN_DIR . 'classes/BenchPress_Snapshots_Table.php';
 require_once BENCHPRESS_PLUGIN_DIR . 'includes/helper-functions.php';
