@@ -1,0 +1,33 @@
+{
+    "name": "robertdevore/wpcom-check",
+    "description": "A utility to handle WordPress.com-specific plugin compatibility and auto-deactivation.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Robert DeVore",
+            "email": "me@robertdevore.com",
+            "homepage": "https://github.com/robertdevore",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "RobertDevore\\WPComCheck\\": "src/"
+        }
+    },
+    "extra": {
+        "wordpress-plugin": true
+    },
+    "keywords": [
+        "wordpress",
+        "plugin",
+        "wordpress.com",
+        "deactivation",
+        "compatibility"
+    ],
+    "homepage": "https://github.com/robertdevore/wpcom-check"
+}

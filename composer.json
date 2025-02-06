@@ -1,0 +1,5 @@
+{
+    "require": {
+        "robertdevore/wpcom-check": "^1.0"
+    }
+}

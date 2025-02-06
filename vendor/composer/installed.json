@@ -1,0 +1,62 @@
+{
+    "packages": [
+        {
+            "name": "robertdevore/wpcom-check",
+            "version": "1.0.1",
+            "version_normalized": "1.0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/robertdevore/wpcom-check.git",
+                "reference": "25eb61d7e0fbd4b2a87a81c3fa7dca722f8d8058"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/robertdevore/wpcom-check/zipball/25eb61d7e0fbd4b2a87a81c3fa7dca722f8d8058",
+                "reference": "25eb61d7e0fbd4b2a87a81c3fa7dca722f8d8058",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4"
+            },
+            "time": "2025-01-07T17:17:53+00:00",
+            "type": "library",
+            "extra": {
+                "wordpress-plugin": true
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "RobertDevore\\WPComCheck\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Robert DeVore",
+                    "email": "me@robertdevore.com",
+                    "homepage": "https://github.com/robertdevore",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A utility to handle WordPress.com-specific plugin compatibility and auto-deactivation.",
+            "homepage": "https://github.com/robertdevore/wpcom-check",
+            "keywords": [
+                "compatibility",
+                "deactivation",
+                "plugin",
+                "wordpress",
+                "wordpress.com"
+            ],
+            "support": {
+                "issues": "https://github.com/robertdevore/wpcom-check/issues",
+                "source": "https://github.com/robertdevore/wpcom-check/tree/1.0.1"
+            },
+            "install-path": "../robertdevore/wpcom-check"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}
