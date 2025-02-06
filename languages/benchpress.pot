@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BenchPress\n"
-"POT-Creation-Date: 2024-11-17 23:36-0500\n"
-"PO-Revision-Date: 2024-11-17 23:36-0500\n"
+"POT-Creation-Date: 2025-02-06 03:19-0500\n"
+"PO-Revision-Date: 2025-02-06 03:19-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -22,176 +22,177 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: vendor\n"
 
-#: benchpress.php:50 benchpress.php:131 benchpress.php:132
-msgid "Settings"
+#: admin/ajax.php:62
+msgid "Snapshot saved!"
+msgstr ""
+
+#: admin/ajax.php:89
+msgid "Snapshot deleted successfully."
+msgstr ""
+
+#: admin/ajax.php:91
+msgid "Failed to delete snapshot."
+msgstr ""
+
+#: admin/ajax.php:94
+msgid "Invalid snapshot ID."
+msgstr ""
+
+#: admin/ajax.php:120
+msgid "All snapshots deleted successfully."
+msgstr ""
+
+#: admin/ajax.php:122
+msgid "Failed to delete snapshots."
+msgstr ""
+
+#: admin/ajax.php:148
+msgid "No snapshots available to download."
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-#: benchpress.php:111 benchpress.php:112 benchpress.php:185
+#: admin/settings.php:16 admin/settings.php:17 admin/settings.php:90
 #: includes/helper-functions.php:364
 msgid "BenchPress"
 msgstr ""
 
-#: benchpress.php:122 benchpress.php:123
+#: admin/settings.php:27 admin/settings.php:28
 #: classes/BenchPress_Snapshots_Table.php:12
 msgid "Snapshots"
 msgstr ""
 
-#: benchpress.php:152 benchpress.php:239 includes/helper-functions.php:356
+#: admin/settings.php:36 admin/settings.php:37 benchpress.php:50
+msgid "Settings"
+msgstr ""
+
+#: admin/settings.php:57 admin/settings.php:144
+#: includes/helper-functions.php:356
 msgid "BenchPress Settings"
 msgstr ""
 
-#: benchpress.php:163
+#: admin/settings.php:68
 msgid "Snapshot Data"
 msgstr ""
 
-#: benchpress.php:191
+#: admin/settings.php:96
 #, php-format
 msgid "Total Execution Time: %s seconds"
 msgstr ""
 
-#: benchpress.php:244
+#: admin/settings.php:149
 msgid "Benchmark Options"
 msgstr ""
 
-#: benchpress.php:246
+#: admin/settings.php:151
 msgid "Loop Count for Benchmarks"
 msgstr ""
 
-#: benchpress.php:250
+#: admin/settings.php:155
 msgid "Enable Switch vs Match Benchmark"
 msgstr ""
 
-#: benchpress.php:253
+#: admin/settings.php:158
 msgid "Enable Transient vs Direct Query Benchmark"
 msgstr ""
 
-#: benchpress.php:255
+#: admin/settings.php:160
 msgid "Enable Post Meta Access Benchmark"
 msgstr ""
 
-#: benchpress.php:261
+#: admin/settings.php:166
 msgid "WP_Query Settings"
 msgstr ""
 
-#: benchpress.php:265
+#: admin/settings.php:170
 msgid "Query Type"
 msgstr ""
 
-#: benchpress.php:268
+#: admin/settings.php:173
 msgid "Single Post"
 msgstr ""
 
-#: benchpress.php:269
+#: admin/settings.php:174
 msgid "Multiple Posts"
 msgstr ""
 
-#: benchpress.php:276
+#: admin/settings.php:181
 msgid "Single Post Query"
 msgstr ""
 
-#: benchpress.php:278
+#: admin/settings.php:183
 msgid "Post ID"
 msgstr ""
 
-#: benchpress.php:285
+#: admin/settings.php:190
 msgid "Multiple Post Query"
 msgstr ""
 
-#: benchpress.php:289
+#: admin/settings.php:194
 msgid "Post Type"
 msgstr ""
 
-#: benchpress.php:302
+#: admin/settings.php:207
 msgid "Number of Posts"
 msgstr ""
 
-#: benchpress.php:306
+#: admin/settings.php:211
 msgid "Taxonomy"
 msgstr ""
 
-#: benchpress.php:308
+#: admin/settings.php:213
 msgid "Select Taxonomy"
 msgstr ""
 
-#: benchpress.php:320
+#: admin/settings.php:225
 msgid "Terms (comma-separated)"
 msgstr ""
 
-#: benchpress.php:324
+#: admin/settings.php:229
 msgid "Order By"
 msgstr ""
 
-#: benchpress.php:327 classes/BenchPress_Snapshots_Table.php:26
+#: admin/settings.php:232 classes/BenchPress_Snapshots_Table.php:26
 msgid "Date"
 msgstr ""
 
-#: benchpress.php:328
+#: admin/settings.php:233
 msgid "Title"
 msgstr ""
 
-#: benchpress.php:329 classes/BenchPress_Snapshots_Table.php:25
+#: admin/settings.php:234 classes/BenchPress_Snapshots_Table.php:25
 msgid "ID"
 msgstr ""
 
-#: benchpress.php:330
+#: admin/settings.php:235
 msgid "Name"
 msgstr ""
 
-#: benchpress.php:331
+#: admin/settings.php:236
 msgid "Author"
 msgstr ""
 
-#: benchpress.php:332
+#: admin/settings.php:237
 msgid "Modified"
 msgstr ""
 
-#: benchpress.php:333
+#: admin/settings.php:238
 msgid "Random"
 msgstr ""
 
-#: benchpress.php:345
+#: admin/settings.php:250
 msgid "Order"
 msgstr ""
 
-#: benchpress.php:348
+#: admin/settings.php:253
 msgid "Ascending"
 msgstr ""
 
-#: benchpress.php:349
+#: admin/settings.php:254
 msgid "Descending"
 msgstr ""
 
-#: benchpress.php:355
+#: admin/settings.php:260
 msgid "Save Settings"
-msgstr ""
-
-#: benchpress.php:464
-msgid "Snapshot saved!"
-msgstr ""
-
-#: benchpress.php:491
-msgid "Snapshot deleted successfully."
-msgstr ""
-
-#: benchpress.php:493
-msgid "Failed to delete snapshot."
-msgstr ""
-
-#: benchpress.php:496
-msgid "Invalid snapshot ID."
-msgstr ""
-
-#: benchpress.php:522
-msgid "All snapshots deleted successfully."
-msgstr ""
-
-#: benchpress.php:524
-msgid "Failed to delete snapshots."
-msgstr ""
-
-#: benchpress.php:550
-msgid "No snapshots available to download."
 msgstr ""
 
 #: classes/BenchPress_Snapshots_Table.php:11

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BenchPress\n"
-"POT-Creation-Date: 2024-11-17 23:36-0500\n"
-"PO-Revision-Date: 2024-11-17 23:45-0500\n"
+"POT-Creation-Date: 2025-02-06 03:19-0500\n"
+"PO-Revision-Date: 2025-02-06 03:19-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_MX\n"
@@ -15,183 +15,184 @@ msgstr ""
 "X-Poedit-WPHeader: benchpress.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
-"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: vendor\n"
 
-#: benchpress.php:50 benchpress.php:131 benchpress.php:132
-msgid "Settings"
-msgstr "Ajustes"
+#: admin/ajax.php:62
+msgid "Snapshot saved!"
+msgstr "¡Instantánea guardada!"
+
+#: admin/ajax.php:89
+msgid "Snapshot deleted successfully."
+msgstr "Instantánea eliminada exitosamente."
+
+#: admin/ajax.php:91
+msgid "Failed to delete snapshot."
+msgstr "No se pudo eliminar la instantánea."
+
+#: admin/ajax.php:94
+msgid "Invalid snapshot ID."
+msgstr "ID de instantánea no válida."
+
+#: admin/ajax.php:120
+msgid "All snapshots deleted successfully."
+msgstr "Todas las instantáneas se eliminaron correctamente."
+
+#: admin/ajax.php:122
+msgid "Failed to delete snapshots."
+msgstr "No se pudieron eliminar las instantáneas."
+
+#: admin/ajax.php:148
+msgid "No snapshots available to download."
+msgstr "No hay instantáneas disponibles para descargar."
 
 #. Plugin Name of the plugin/theme
-#: benchpress.php:111 benchpress.php:112 benchpress.php:185
+#: admin/settings.php:16 admin/settings.php:17 admin/settings.php:90
 #: includes/helper-functions.php:364
 msgid "BenchPress"
 msgstr "BenchPress"
 
-#: benchpress.php:122 benchpress.php:123
+#: admin/settings.php:27 admin/settings.php:28
 #: classes/BenchPress_Snapshots_Table.php:12
 msgid "Snapshots"
 msgstr "Instantáneas"
 
-#: benchpress.php:152 benchpress.php:239 includes/helper-functions.php:356
+#: admin/settings.php:36 admin/settings.php:37 benchpress.php:50
+msgid "Settings"
+msgstr "Ajustes"
+
+#: admin/settings.php:57 admin/settings.php:144
+#: includes/helper-functions.php:356
 msgid "BenchPress Settings"
 msgstr "Configuración de BenchPress"
 
-#: benchpress.php:163
+#: admin/settings.php:68
 msgid "Snapshot Data"
 msgstr "Datos de instantáneas"
 
-#: benchpress.php:191
+#: admin/settings.php:96
 #, php-format
 msgid "Total Execution Time: %s seconds"
 msgstr "Tiempo total de ejecución: %s segundos"
 
-#: benchpress.php:244
+#: admin/settings.php:149
 msgid "Benchmark Options"
 msgstr "Opciones de referencia"
 
-#: benchpress.php:246
+#: admin/settings.php:151
 msgid "Loop Count for Benchmarks"
 msgstr "Recuento de bucles para puntos de referencia"
 
-#: benchpress.php:250
+#: admin/settings.php:155
 msgid "Enable Switch vs Match Benchmark"
 msgstr "Habilitar el punto de referencia Switch vs Match"
 
-#: benchpress.php:253
+#: admin/settings.php:158
 msgid "Enable Transient vs Direct Query Benchmark"
 msgstr "Habilitar la comparación entre consulta directa y transitoria"
 
-#: benchpress.php:255
+#: admin/settings.php:160
 msgid "Enable Post Meta Access Benchmark"
 msgstr "Habilitar el punto de referencia de acceso a metadatos de publicación"
 
-#: benchpress.php:261
+#: admin/settings.php:166
 msgid "WP_Query Settings"
 msgstr "Configuración de WP_Query"
 
-#: benchpress.php:265
+#: admin/settings.php:170
 msgid "Query Type"
 msgstr "Tipo de consulta"
 
-#: benchpress.php:268
+#: admin/settings.php:173
 msgid "Single Post"
 msgstr "Publicación individual"
 
-#: benchpress.php:269
+#: admin/settings.php:174
 msgid "Multiple Posts"
 msgstr "Publicaciones múltiples"
 
-#: benchpress.php:276
+#: admin/settings.php:181
 msgid "Single Post Query"
 msgstr "Consulta de publicación única"
 
-#: benchpress.php:278
+#: admin/settings.php:183
 msgid "Post ID"
 msgstr "ID de Publicación"
 
-#: benchpress.php:285
+#: admin/settings.php:190
 msgid "Multiple Post Query"
 msgstr "Consulta de publicaciones múltiples"
 
-#: benchpress.php:289
+#: admin/settings.php:194
 msgid "Post Type"
 msgstr "Tipo de mensaje"
 
-#: benchpress.php:302
+#: admin/settings.php:207
 msgid "Number of Posts"
 msgstr "Cantidad de publicaciones"
 
-#: benchpress.php:306
+#: admin/settings.php:211
 msgid "Taxonomy"
 msgstr "Taxonomía"
 
-#: benchpress.php:308
+#: admin/settings.php:213
 msgid "Select Taxonomy"
 msgstr "Elige una taxonomía"
 
-#: benchpress.php:320
+#: admin/settings.php:225
 msgid "Terms (comma-separated)"
 msgstr "Términos (separados por comas)"
 
-#: benchpress.php:324
+#: admin/settings.php:229
 msgid "Order By"
 msgstr "Ordenar por"
 
-#: benchpress.php:327 classes/BenchPress_Snapshots_Table.php:26
+#: admin/settings.php:232 classes/BenchPress_Snapshots_Table.php:26
 msgid "Date"
 msgstr "Fecha"
 
-#: benchpress.php:328
+#: admin/settings.php:233
 msgid "Title"
 msgstr "Título"
 
-#: benchpress.php:329 classes/BenchPress_Snapshots_Table.php:25
+#: admin/settings.php:234 classes/BenchPress_Snapshots_Table.php:25
 msgid "ID"
 msgstr "ID"
 
-#: benchpress.php:330
+#: admin/settings.php:235
 msgid "Name"
 msgstr "Nombre"
 
-#: benchpress.php:331
+#: admin/settings.php:236
 msgid "Author"
 msgstr "Autor"
 
-#: benchpress.php:332
+#: admin/settings.php:237
 msgid "Modified"
 msgstr "Modificado"
 
-#: benchpress.php:333
+#: admin/settings.php:238
 msgid "Random"
 msgstr "Aleatorio"
 
-#: benchpress.php:345
+#: admin/settings.php:250
 msgid "Order"
 msgstr "Orden"
 
-#: benchpress.php:348
+#: admin/settings.php:253
 msgid "Ascending"
 msgstr "Ascendente"
 
-#: benchpress.php:349
+#: admin/settings.php:254
 msgid "Descending"
 msgstr "Descendente"
 
-#: benchpress.php:355
+#: admin/settings.php:260
 msgid "Save Settings"
 msgstr "Guardar Ajustes"
-
-#: benchpress.php:464
-msgid "Snapshot saved!"
-msgstr "¡Instantánea guardada!"
-
-#: benchpress.php:491
-msgid "Snapshot deleted successfully."
-msgstr "Instantánea eliminada exitosamente."
-
-#: benchpress.php:493
-msgid "Failed to delete snapshot."
-msgstr "No se pudo eliminar la instantánea."
-
-#: benchpress.php:496
-msgid "Invalid snapshot ID."
-msgstr "ID de instantánea no válida."
-
-#: benchpress.php:522
-msgid "All snapshots deleted successfully."
-msgstr "Todas las instantáneas se eliminaron correctamente."
-
-#: benchpress.php:524
-msgid "Failed to delete snapshots."
-msgstr "No se pudieron eliminar las instantáneas."
-
-#: benchpress.php:550
-msgid "No snapshots available to download."
-msgstr "No hay instantáneas disponibles para descargar."
 
 #: classes/BenchPress_Snapshots_Table.php:11
 msgid "Snapshot"
@@ -245,8 +246,8 @@ msgid ""
 "with taxonomy (%s) and terms (%s), averaged over %d iteration(s)."
 msgstr ""
 "Es hora de ejecutar WP_Query para %d publicaciones del tipo de publicación "
-"%s, ordenando por %s (%s), con taxonomía (%s) y términos (%s), promediado "
-"en %d iteraciones."
+"%s, ordenando por %s (%s), con taxonomía (%s) y términos (%s), promediado en "
+"%d iteraciones."
 
 #: includes/helper-functions.php:77 includes/helper-functions.php:78
 msgid "none"
@@ -315,7 +316,7 @@ msgstr ""
 
 #: includes/helper-functions.php:334
 msgid "get_post_meta() vs WP_Meta_Query"
-msgstr "Comparación entre get_post_meta() y WP_Meta_Query"
+msgstr "comparación entre get_post_meta() y WP_Meta_Query"
 
 #: includes/helper-functions.php:352
 msgid "BenchPress Snapshots"
